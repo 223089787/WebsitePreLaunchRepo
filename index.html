@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blackout VIP | Elite Security Solutions</title>
+    <title>Home</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Favicon -->
@@ -63,34 +63,48 @@
         }
 
         .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
+    text-align: center;
+    margin-bottom: 80px;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.05), rgba(241, 196, 15, 0.02));
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+}
 
-        .section-title h2 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
+.section-title h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, var(--gold), var(--gold-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+}
 
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--gold);
-            border-radius: 2px;
-        }
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, var(--gold), var(--gold-light));
+    border-radius: 2px;
+    opacity: 0.8;
+}
 
-        .section-title p {
-            color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto;
-        }
+.section-title p {
+    color: var(--text-light);
+    max-width: 650px;
+    margin: 25px auto 0;
+    font-size: 1.15rem;
+    line-height: 1.7;
+}
+
 
         .btn {
             display: inline-block;
@@ -131,19 +145,19 @@
             left: 100%;
         }
 
-        /* Header Styles */
+        /* Enhanced Header Styles */
         header {
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(15px);
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
             transform: translateY(0);
-            transition: transform 0.4s ease;
+            transition: transform 0.4s ease, background 0.3s ease;
         }
 
         header.hidden {
@@ -154,7 +168,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 15px 0;
         }
 
         .logo {
@@ -184,40 +198,38 @@
 
         .nav-menu {
             display: flex;
-            list-style: none; /* Remove bullet points */
+            list-style: none;
+            gap: 10px;
         }
 
         .nav-menu li {
-            margin-left: 30px;
+            margin-left: 0;
         }
 
         .nav-menu a {
             color: var(--text);
-            font-weight: 500;
-            padding: 8px 0;
+            font-weight: 600;
+            padding: 12px 24px;
             position: relative;
             transition: var(--transition);
             text-decoration: none !important;
+            border-radius: var(--radius-sm);
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
         }
 
         .nav-menu a:hover {
             color: var(--gold);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(241, 196, 15, 0.05));
+            transform: translateY(-2px);
         }
 
-        /* Add line under navigation elements on hover */
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gold);
-            transition: var(--transition);
-        }
-
-        .nav-menu a:hover::after {
-            width: 100%;
+        /* Active state for current page - Gradient Style */
+        .nav-menu a.active {
+            color: var(--black);
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            font-weight: 700;
         }
 
         .mobile-toggle {
@@ -227,19 +239,19 @@
             color: var(--gold);
         }
 
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            padding-top: 100px;
-            background: linear-gradient(rgba(10, 10, 10, 0.8), rgba(10, 10, 10, 0.9)), url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center;
-            background-size: cover;
-            opacity: 1 !important;
-            transform: none !important;
-        }
+       /* Hero Section */
+		.hero {
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			position: relative;
+			overflow: hidden;
+			padding-top: 100px;
+			background: linear-gradient(rgba(10, 10, 10, 0.6), rgba(10, 10, 10, 0.7)), url('assets/Background Image 2.jpg') no-repeat center center;
+			background-size: cover;
+			opacity: 1 !important;
+			transform: none !important;
+		}
 
         .hero-content {
             max-width: 800px;
@@ -708,6 +720,124 @@
             text-decoration: none !important;
         }
 
+
+		/* PSIRA Membership Section */
+.psira-section {
+    background: var(--dark-gray);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.psira-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.03) 0%, transparent 100%);
+    z-index: 0;
+}
+
+.psira-content {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    position: relative;
+    z-index: 1;
+}
+
+.psira-text {
+    flex: 1;
+}
+
+.psira-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--gold-light);
+    text-decoration: none !important;
+}
+
+.psira-text p {
+    margin-bottom: 25px;
+    color: var(--text-light);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    text-decoration: none !important;
+}
+
+.psira-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    background: rgba(212, 175, 55, 0.1);
+    padding: 20px 30px;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    margin-top: 20px;
+    transition: var(--transition);
+}
+
+.psira-badge:hover {
+    background: rgba(212, 175, 55, 0.15);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+.psira-badge i {
+    font-size: 2rem;
+    color: var(--gold);
+}
+
+.psira-badge-text {
+    font-weight: 600;
+    color: var(--gold-light);
+}
+
+.psira-image {
+    flex: 1;
+    text-align: center;
+    opacity: 0;
+    transform: translateX(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.psira-image.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.psira-logo {
+    max-width: 300px;
+    height: auto;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow);
+    border: 2px solid rgba(212, 175, 55, 0.3);
+    transition: var(--transition);
+}
+
+.psira-logo:hover {
+    transform: scale(1.05);
+    border-color: var(--gold);
+    box-shadow: 0 15px 35px rgba(212, 175, 55, 0.2);
+}
+
+@media (max-width: 992px) {
+    .psira-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .psira-image {
+        margin-top: 40px;
+    }
+    
+    .psira-logo {
+        max-width: 250px;
+    }
+}
+
         /* Footer */
         footer {
             background: var(--black);
@@ -858,13 +988,14 @@
                 left: -100%;
                 width: 100%;
                 height: calc(100vh - 80px);
-                background: var(--black);
+                background: rgba(10, 10, 10, 0.98);
                 flex-direction: column;
                 align-items: center;
                 justify-content: flex-start;
                 padding-top: 50px;
                 transition: var(--transition);
                 border-top: 1px solid rgba(212, 175, 55, 0.1);
+                backdrop-filter: blur(20px);
             }
             
             .nav-menu.active {
@@ -872,7 +1003,23 @@
             }
             
             .nav-menu li {
-                margin: 15px 0;
+                margin: 10px 0;
+                width: 80%;
+                text-align: center;
+            }
+            
+            .nav-menu a {
+                display: block;
+                padding: 15px 20px;
+                width: 100%;
+                border-radius: var(--radius-md);
+                font-size: 1.1rem;
+            }
+            
+            .nav-menu a.active {
+                background: linear-gradient(135deg, var(--gold), var(--gold-light));
+                color: var(--black);
+                font-weight: 700;
             }
             
             .hero-title {
@@ -922,8 +1069,7 @@
     <header>
         <div class="container header-container">
             <div class="logo">
-                <!-- Replaced the shield icon with your logo -->
-                <img src="assets/Blackout Logo Cropped.png" alt="Blackout VIP Logo" class="logo-img">
+                <img src="assets/Blackout Logo Cropped.PNG" alt="Blackout VIP Logo" class="logo-img">
                 <div class="logo-text">BLACKOUT VIP</div>
             </div>
             
@@ -933,9 +1079,11 @@
                 </div>
                 
                 <ul class="nav-menu">
-                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
+					<li><a href="armouredvehicles.html">Armoured Vehicles</a></li>
+					<li><a href="gallery.html">Gallery</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
@@ -946,7 +1094,7 @@
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-badge">ELITE SECURITY SOLUTIONS</div>
+                <!-- <div class="hero-badge">ELITE SECURITY SOLUTIONS</div> -->
                 <h1 class="hero-title">EXCLUSIVE PROTECTION FOR THE DISTINGUISHED</h1>
                 <p class="hero-subtitle">Our security are ambassadors of protection</p>
                 <p class="hero-text">Blackout VIP delivers exceptional, high-quality security services tailored to protect clients, communities, and assets with the utmost discretion and professionalism.</p>
@@ -1043,7 +1191,7 @@
                                 <i class="fas fa-globe"></i>
                             </div>
                             <div class="feature-text">
-                                <h4>Global Network</h4>
+                                <h4>Vast Network</h4>
                                 <p>Access to security resources and intelligence networks for comprehensive protection.</p>
                             </div>
                         </div>
@@ -1069,6 +1217,30 @@
         </div>
     </section>
 
+<!-- PSIRA Membership Section -->
+<section class="psira-section" id="psira">
+    <div class="container">
+        <div class="psira-content">
+            <div class="psira-text">
+                <h2>PSIRA Registered & Trusted</h2>
+                <p>Blackout VIP is fully licensed and regulated under South Africa’s Private Security Industry Regulatory Authority (PSIRA). Our compliance with PSIRA standards reflects our dedication to lawful operations, professionalism, and excellence in service delivery.</p>
+                
+                <p>Our certification ensures that every member of our team meets strict standards for training, conduct, and ethics. This oversight gives our clients confidence that they are working with a legitimate and accountable security partner.</p>
+                
+                <p>With PSIRA accreditation, Blackout VIP is authorized to deliver trusted, high-quality security solutions while upholding the integrity of South Africa’s private security industry.</p>
+                
+               
+            </div>
+            
+            <div class="psira-image">
+                <img src="assets/Psira.jpg" alt="PSIRA - Private Security Industry Regulatory Authority" class="psira-logo">
+               
+            </div>
+        </div>
+    </div>
+</section>
+
+
     <!-- Testimonials Section -->
     <section class="testimonials" id="testimonials">
         <div class="container">
@@ -1080,39 +1252,37 @@
             <div class="testimonials-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-text">
-                        Blackout VIP provided exceptional security during our corporate merger. Their discretion and professionalism were beyond compare.
+                        Blackout VIP handled security for one of our major corporate functions with absolute professionalism. Their team was discreet, well-coordinated, and maintained a calm presence throughout the event. We couldn’t have asked for better support.
                     </div>
                     <div class="testimonial-author">
-                        <div class="author-avatar">JD</div>
+                        <div class="author-avatar">AC</div>
                         <div class="author-info">
-                            <h4>James Donovan</h4>
-                            <p>CEO, Donovan Industries</p>
+                            <h4>A. Collins</h4>
+                            <!-- <p>CEO, Donovan Industries</p> -->
                         </div>
                     </div>
                 </div>
                 
                 <div class="testimonial-card">
                     <div class="testimonial-text">
-                        The executive protection team was seamless in their operations during my international tour. I felt completely secure throughout.
-                    </div>
+						I required personal protection during a short-term assignment. The team was reliable, professional, and made me feel safe without ever being intrusive. I would highly recommend their executive protection services.                    </div>
                     <div class="testimonial-author">
-                        <div class="author-avatar">SR</div>
+                        <div class="author-avatar">TK</div>
                         <div class="author-info">
-                            <h4>Sarah Richardson</h4>
-                            <p>International Speaker</p>
+                            <h4>T. Khumalo</h4>
+                            <!-- <p>International Speaker</p> -->
                         </div>
                     </div>
                 </div>
                 
                 <div class="testimonial-card">
                     <div class="testimonial-text">
-                        Their risk assessment identified vulnerabilities we hadn't considered. The implementation was flawless and non-disruptive.
-                    </div>
+					From the first consultation to the final debrief, the professionalism stood out. The Blackout VIP team anticipated our needs and managed every detail with precision and discretion.                    </div>
                     <div class="testimonial-author">
-                        <div class="author-avatar">MT</div>
+                        <div class="author-avatar">NS</div>
                         <div class="author-info">
-                            <h4>Michael Thompson</h4>
-                            <p>Security Director, TechGlobal</p>
+                            <h4>N. Singh</h4>
+                            <!-- <p>Security Director, TechGlobal</p> -->
                         </div>
                     </div>
                 </div>
@@ -1167,7 +1337,7 @@
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div>
-                                <p>1234 Example Street<br>Mackenzie, Benoni</p>
+                                <p>31 Michelson Rd<br>Westwood AH, Boksburg</p>
                             </div>
                         </li>
                         <li>
@@ -1175,7 +1345,7 @@
                                 <i class="fas fa-phone"></i>
                             </div>
                             <div>
-                                <p>011 222 3333<br>083 444 5555</p>
+                                <p>064 703 6552<br>079 313 8997</p>
                             </div>
                         </li>
                         <li>
@@ -1199,16 +1369,24 @@
         </div>
     </footer>
 
-    <script>
-        // Mobile Navigation Toggle
+   <script>
+        // Enhanced Mobile Navigation Toggle
         document.addEventListener('DOMContentLoaded', function() {
             const mobileToggle = document.querySelector('.mobile-toggle');
             const navMenu = document.querySelector('.nav-menu');
             
             mobileToggle.addEventListener('click', function() {
                 navMenu.classList.toggle('active');
-                mobileToggle.querySelector('i').classList.toggle('fa-bars');
-                mobileToggle.querySelector('i').classList.toggle('fa-times');
+                const icon = mobileToggle.querySelector('i');
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+                
+                // Add animation class for smooth transition
+                if (navMenu.classList.contains('active')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = '';
+                }
             });
             
             // Close mobile menu when clicking on a link
@@ -1218,37 +1396,69 @@
                     navMenu.classList.remove('active');
                     mobileToggle.querySelector('i').classList.add('fa-bars');
                     mobileToggle.querySelector('i').classList.remove('fa-times');
+                    document.body.style.overflow = '';
                 });
             });
             
-            // Smooth scrolling for anchor links
+            // Enhanced active page detection
+            function setActivePage() {
+                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+                const navLinks = document.querySelectorAll('.nav-menu a');
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    const linkPage = link.getAttribute('href');
+                    
+                    // Handle home page special case
+                    if (currentPage === 'index.html' || currentPage === '') {
+                        if (linkPage === 'index.html' || linkPage === './' || linkPage === '/' || linkPage === '#home') {
+                            link.classList.add('active');
+                        }
+                    } 
+                    // Handle other pages
+                    else if (linkPage === currentPage) {
+                        link.classList.add('active');
+                    }
+                    // Handle hash links on index page
+                    else if (currentPage === 'index.html' && linkPage.startsWith('#')) {
+                        // This will be handled by the scroll-based active class
+                    }
+                });
+            }
+            
+            // Set active page on load
+            setActivePage();
+            
+            // Enhanced smooth scrolling for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
+                    const href = this.getAttribute('href');
                     
-                    const targetId = this.getAttribute('href');
-                    if (targetId === '#') return;
-                    
-                    const targetElement = document.querySelector(targetId);
-                    if (targetElement) {
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80,
-                            behavior: 'smooth'
-                        });
+                    // Only prevent default for actual anchor links, not page links
+                    if (href !== '#' && !href.includes('.html')) {
+                        e.preventDefault();
+                        
+                        const targetElement = document.querySelector(href);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
                     }
                 });
             });
             
-            // Active navigation link based on scroll position
+            // Enhanced active navigation link based on scroll position
             window.addEventListener('scroll', function() {
-                const sections = document.querySelectorAll('section');
-                const navLinks = document.querySelectorAll('.nav-menu a');
+                const sections = document.querySelectorAll('section[id]');
+                const navLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
                 
                 let current = '';
                 sections.forEach(section => {
                     const sectionTop = section.offsetTop;
                     const sectionHeight = section.clientHeight;
-                    if (pageYOffset >= sectionTop - 100) {
+                    if (pageYOffset >= sectionTop - 150) {
                         current = section.getAttribute('id');
                     }
                 });
@@ -1259,6 +1469,15 @@
                         link.classList.add('active');
                     }
                 });
+                
+                // If at top of page and on index.html, set home as active
+                if (window.pageYOffset < 100 && window.location.pathname.endsWith('index.html')) {
+                    navLinks.forEach(link => {
+                        if (link.getAttribute('href') === '#home') {
+                            link.classList.add('active');
+                        }
+                    });
+                }
             });
 
             // Scroll animations
@@ -1268,6 +1487,7 @@
                 const testimonialCards = document.querySelectorAll('.testimonial-card');
                 const features = document.querySelectorAll('.feature');
                 const aboutImage = document.querySelector('.about-image');
+                const psiraImage = document.querySelector('.psira-image');
                 
                 sections.forEach(section => {
                     const sectionTop = section.getBoundingClientRect().top;
@@ -1322,6 +1542,16 @@
                         aboutImage.classList.add('visible');
                     }
                 }
+                
+                // PSIRA Image Animation - ADDED THIS
+                if (psiraImage) {
+                    const psiraImageTop = psiraImage.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (psiraImageTop < windowHeight * 0.85) {
+                        psiraImage.classList.add('visible');
+                    }
+                }
             }
             
             // Hide header on scroll down, show on scroll up
@@ -1349,6 +1579,4 @@
         });
     </script>
 </body>
-
 </html>
-
