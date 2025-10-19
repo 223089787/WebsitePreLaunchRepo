@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services | Blackout VIP | Elite Security Solutions</title>
+    <title>Our Services</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Favicon -->
@@ -63,34 +63,48 @@
         }
 
         .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
+    text-align: center;
+    margin-bottom: 80px;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.05), rgba(241, 196, 15, 0.02));
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+}
 
-        .section-title h2 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
+.section-title h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, var(--gold), var(--gold-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+}
 
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--gold);
-            border-radius: 2px;
-        }
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, var(--gold), var(--gold-light));
+    border-radius: 2px;
+    opacity: 0.8;
+}
 
-        .section-title p {
-            color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto;
-        }
+.section-title p {
+    color: var(--text-light);
+    max-width: 650px;
+    margin: 25px auto 0;
+    font-size: 1.15rem;
+    line-height: 1.7;
+}
+
 
         .btn {
             display: inline-block;
@@ -131,19 +145,19 @@
             left: 100%;
         }
 
-        /* Header Styles */
+        /* Enhanced Header Styles */
         header {
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(15px);
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
             transform: translateY(0);
-            transition: transform 0.4s ease;
+            transition: transform 0.4s ease, background 0.3s ease;
         }
 
         header.hidden {
@@ -154,7 +168,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 15px 0;
         }
 
         .logo {
@@ -186,38 +200,37 @@
         .nav-menu {
             display: flex;
             list-style: none;
+            gap: 10px;
         }
 
         .nav-menu li {
-            margin-left: 30px;
+            margin-left: 0;
         }
 
         .nav-menu a {
             color: var(--text);
-            font-weight: 500;
-            padding: 8px 0;
+            font-weight: 600;
+            padding: 12px 24px;
             position: relative;
             transition: var(--transition);
             text-decoration: none;
+            border-radius: var(--radius-sm);
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
         }
 
         .nav-menu a:hover {
             color: var(--gold);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(241, 196, 15, 0.05));
+            transform: translateY(-2px);
         }
 
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gold);
-            transition: var(--transition);
-        }
-
-        .nav-menu a:hover::after {
-            width: 100%;
+        /* Active state for current page - Gradient Style */
+        .nav-menu a.active {
+            color: var(--black);
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            font-weight: 700;
         }
 
         .mobile-toggle {
@@ -710,13 +723,14 @@
                 left: -100%;
                 width: 100%;
                 height: calc(100vh - 80px);
-                background: var(--black);
+                background: rgba(10, 10, 10, 0.98);
                 flex-direction: column;
                 align-items: center;
                 justify-content: flex-start;
                 padding-top: 50px;
                 transition: var(--transition);
                 border-top: 1px solid rgba(212, 175, 55, 0.1);
+                backdrop-filter: blur(20px);
             }
             
             .nav-menu.active {
@@ -724,7 +738,23 @@
             }
             
             .nav-menu li {
-                margin: 15px 0;
+                margin: 10px 0;
+                width: 80%;
+                text-align: center;
+            }
+            
+            .nav-menu a {
+                display: block;
+                padding: 15px 20px;
+                width: 100%;
+                border-radius: var(--radius-md);
+                font-size: 1.1rem;
+            }
+            
+            .nav-menu a.active {
+                background: linear-gradient(135deg, var(--gold), var(--gold-light));
+                color: var(--black);
+                font-weight: 700;
             }
             
             .page-hero-title {
@@ -779,6 +809,8 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="services.html" class="active">Services</a></li>
+					<li><a href="armouredvehicles.html">Armoured Vehicles</a></li>
+					<li><a href="gallery.html">Gallery</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
@@ -786,14 +818,14 @@
     </header>
 
     <!-- Page Hero -->
-    <section class="page-hero">
-        <div class="container">
-            <div class="page-hero-content">
-                <h1 class="page-hero-title">Our Security Services</h1>
-                <p class="page-hero-subtitle">Comprehensive protection solutions for every security challenge</p>
-            </div>
-        </div>
-    </section>
+    <!-- <section class="page-hero"> -->
+        <!-- <div class="container"> -->
+            <!-- <div class="page-hero-content"> -->
+                <!-- <h1 class="page-hero-title">Our Security Services</h1> -->
+                <!-- <p class="page-hero-subtitle">Comprehensive protection solutions for every security challenge</p> -->
+            <!-- </div> -->
+        <!-- </div> -->
+    <!-- </section> -->
 
     <!-- Services Overview -->
     <section class="services">
@@ -892,40 +924,40 @@
     </section>
 
     <!-- Executive Protection Detail -->
-    <section class="service-detail">
-        <div class="container">
-            <div class="service-detail-content">
-                <div class="service-detail-text">
-                    <h2>Executive Protection</h2>
-                    <p>Our executive protection services provide discreet, comprehensive security for high-net-worth individuals, corporate executives, celebrities, and other high-profile clients. We understand that protection must be effective without being intrusive.</p>
-                    <p>Each executive protection assignment begins with a thorough threat assessment and develops into a customized protection plan that addresses all potential vulnerabilities while maintaining the client's preferred lifestyle and public profile.</p>
-                    <p>Our protection agents are selected from elite backgrounds and trained in advanced protective techniques, emergency medicine, defensive driving, and diplomatic protocols.</p>
-                    <a href="contact.html" class="btn">Request Protection Assessment</a>
-                </div>
-                <div class="service-detail-image">
-                    <img src="https://images.unsplash.com/photo-1589321599763-76ef6c571b72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Executive Protection" class="service-detail-img">
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- <section class="service-detail"> -->
+        <!-- <div class="container"> -->
+            <!-- <div class="service-detail-content"> -->
+                <!-- <div class="service-detail-text"> -->
+                    <!-- <h2>Executive Protection</h2> -->
+                    <!-- <p>Our executive protection services provide discreet, comprehensive security for high-net-worth individuals, corporate executives, celebrities, and other high-profile clients. We understand that protection must be effective without being intrusive.</p> -->
+                    <!-- <p>Each executive protection assignment begins with a thorough threat assessment and develops into a customized protection plan that addresses all potential vulnerabilities while maintaining the client's preferred lifestyle and public profile.</p> -->
+                    <!-- <p>Our protection agents are selected from elite backgrounds and trained in advanced protective techniques, emergency medicine, defensive driving, and diplomatic protocols.</p> -->
+                    <!-- <a href="contact.html" class="btn">Request Protection Assessment</a> -->
+                <!-- </div> -->
+                <!-- <div class="service-detail-image"> -->
+                    <!-- <img src="https://images.unsplash.com/photo-1589321599763-76ef6c571b72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Executive Protection" class="service-detail-img"> -->
+                <!-- </div> -->
+            <!-- </div> -->
+        <!-- </div> -->
+    <!-- </section> -->
 
     <!-- Asset Protection Detail -->
-    <section class="service-detail">
-        <div class="container">
-            <div class="service-detail-content">
-                <div class="service-detail-image">
-                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1073&q=80" alt="Asset Protection" class="service-detail-img">
-                </div>
-                <div class="service-detail-text">
-                    <h2>Asset Protection</h2>
-                    <p>Our asset protection division secures valuable properties, collections, and facilities against theft, vandalism, and unauthorized access. We implement layered security solutions that combine physical presence with advanced technology.</p>
-                    <p>From private residences to corporate headquarters, our approach integrates access control systems, surveillance networks, and trained security personnel to create comprehensive protection environments.</p>
-                    <p>We conduct regular security audits and vulnerability assessments to ensure our protective measures evolve with emerging threats and changing circumstances.</p>
-                    <a href="contact.html" class="btn">Schedule Security Audit</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- <section class="service-detail"> -->
+        <!-- <div class="container"> -->
+            <!-- <div class="service-detail-content"> -->
+                <!-- <div class="service-detail-image"> -->
+                    <!-- <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1073&q=80" alt="Asset Protection" class="service-detail-img"> -->
+                <!-- </div> -->
+                <!-- <div class="service-detail-text"> -->
+                    <!-- <h2>Asset Protection</h2> -->
+                    <!-- <p>Our asset protection division secures valuable properties, collections, and facilities against theft, vandalism, and unauthorized access. We implement layered security solutions that combine physical presence with advanced technology.</p> -->
+                    <!-- <p>From private residences to corporate headquarters, our approach integrates access control systems, surveillance networks, and trained security personnel to create comprehensive protection environments.</p> -->
+                    <!-- <p>We conduct regular security audits and vulnerability assessments to ensure our protective measures evolve with emerging threats and changing circumstances.</p> -->
+                    <!-- <a href="contact.html" class="btn">Schedule Security Audit</a> -->
+                <!-- </div> -->
+            <!-- </div> -->
+        <!-- </div> -->
+    <!-- </section> -->
 
     <!-- Process Section -->
     <section class="process">
@@ -992,8 +1024,7 @@
                     </div>
                     <p>Providing elite security solutions for distinguished clients worldwide since 2008. Our commitment to excellence and discretion sets us apart in the protection industry.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                     </div>
@@ -1019,7 +1050,7 @@
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div>
-                                <p>124 Secure Plaza<br>Metropolis, MP 10001</p>
+                                <p>31 Michelson Rd<br>Westwood AH, Boksburg</p>
                             </div>
                         </li>
                         <li>
@@ -1027,7 +1058,7 @@
                                 <i class="fas fa-phone"></i>
                             </div>
                             <div>
-                                <p>+1 (555) 123-4567<br>+1 (555) 123-4568</p>
+                                <p>064 703 6552<br>079 313 8997</p>
                             </div>
                         </li>
                         <li>
@@ -1035,7 +1066,7 @@
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <div>
-                                <p>info@blackoutvip.com<br>security@blackoutvip.com</p>
+                                <p>info@blackoutvip.co.za<br>security@blackoutvip.co.za</p>
                             </div>
                         </li>
                     </ul>
@@ -1052,15 +1083,23 @@
     </footer>
 
     <script>
-        // Mobile Navigation Toggle
+        // Enhanced Mobile Navigation Toggle
         document.addEventListener('DOMContentLoaded', function() {
             const mobileToggle = document.querySelector('.mobile-toggle');
             const navMenu = document.querySelector('.nav-menu');
             
             mobileToggle.addEventListener('click', function() {
                 navMenu.classList.toggle('active');
-                mobileToggle.querySelector('i').classList.toggle('fa-bars');
-                mobileToggle.querySelector('i').classList.toggle('fa-times');
+                const icon = mobileToggle.querySelector('i');
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+                
+                // Add animation class for smooth transition
+                if (navMenu.classList.contains('active')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = '';
+                }
             });
             
             // Close mobile menu when clicking on a link
@@ -1070,16 +1109,53 @@
                     navMenu.classList.remove('active');
                     mobileToggle.querySelector('i').classList.add('fa-bars');
                     mobileToggle.querySelector('i').classList.remove('fa-times');
+                    document.body.style.overflow = '';
                 });
             });
             
-            // Active navigation link based on current page
-            const currentPage = window.location.pathname.split('/').pop();
-            const navLinksAll = document.querySelectorAll('.nav-menu a');
-            navLinksAll.forEach(link => {
-                if (link.getAttribute('href') === currentPage) {
-                    link.classList.add('active');
-                }
+            // Enhanced active page detection
+            function setActivePage() {
+                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+                const navLinks = document.querySelectorAll('.nav-menu a');
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    const linkPage = link.getAttribute('href');
+                    
+                    // Handle home page special case
+                    if (currentPage === 'index.html' || currentPage === '') {
+                        if (linkPage === 'index.html' || linkPage === './' || linkPage === '/' || linkPage === '#home') {
+                            link.classList.add('active');
+                        }
+                    } 
+                    // Handle other pages
+                    else if (linkPage === currentPage) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+            
+            // Set active page on load
+            setActivePage();
+            
+            // Enhanced smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    
+                    // Only prevent default for actual anchor links, not page links
+                    if (href !== '#' && !href.includes('.html')) {
+                        e.preventDefault();
+                        
+                        const targetElement = document.querySelector(href);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
             });
 
             // Scroll animations
