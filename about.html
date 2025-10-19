@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Blackout VIP | Elite Security Solutions</title>
+    <title>About Us</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Favicon -->
@@ -63,34 +63,48 @@
         }
 
         .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
+    text-align: center;
+    margin-bottom: 80px;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.05), rgba(241, 196, 15, 0.02));
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+}
 
-        .section-title h2 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
+.section-title h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, var(--gold), var(--gold-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+}
 
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--gold);
-            border-radius: 2px;
-        }
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, var(--gold), var(--gold-light));
+    border-radius: 2px;
+    opacity: 0.8;
+}
 
-        .section-title p {
-            color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto;
-        }
+.section-title p {
+    color: var(--text-light);
+    max-width: 650px;
+    margin: 25px auto 0;
+    font-size: 1.15rem;
+    line-height: 1.7;
+}
+
 
         .btn {
             display: inline-block;
@@ -131,19 +145,19 @@
             left: 100%;
         }
 
-        /* Header Styles */
+        /* Enhanced Header Styles */
         header {
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(15px);
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
             transform: translateY(0);
-            transition: transform 0.4s ease;
+            transition: transform 0.4s ease, background 0.3s ease;
         }
 
         header.hidden {
@@ -154,7 +168,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 15px 0;
         }
 
         .logo {
@@ -186,38 +200,37 @@
         .nav-menu {
             display: flex;
             list-style: none;
+            gap: 10px;
         }
 
         .nav-menu li {
-            margin-left: 30px;
+            margin-left: 0;
         }
 
         .nav-menu a {
             color: var(--text);
-            font-weight: 500;
-            padding: 8px 0;
+            font-weight: 600;
+            padding: 12px 24px;
             position: relative;
             transition: var(--transition);
             text-decoration: none;
+            border-radius: var(--radius-sm);
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
         }
 
         .nav-menu a:hover {
             color: var(--gold);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(241, 196, 15, 0.05));
+            transform: translateY(-2px);
         }
 
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gold);
-            transition: var(--transition);
-        }
-
-        .nav-menu a:hover::after {
-            width: 100%;
+        /* Active state for current page - Gradient Style */
+        .nav-menu a.active {
+            color: var(--black);
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            font-weight: 700;
         }
 
         .mobile-toggle {
@@ -497,7 +510,7 @@
 
         /* Values Section */
         .values {
-            background: var(--black);
+            background: var(--dark-gray);
             padding: 100px 0;
         }
 
@@ -726,13 +739,14 @@
                 left: -100%;
                 width: 100%;
                 height: calc(100vh - 80px);
-                background: var(--black);
+                background: rgba(10, 10, 10, 0.98);
                 flex-direction: column;
                 align-items: center;
                 justify-content: flex-start;
                 padding-top: 50px;
                 transition: var(--transition);
                 border-top: 1px solid rgba(212, 175, 55, 0.1);
+                backdrop-filter: blur(20px);
             }
             
             .nav-menu.active {
@@ -740,7 +754,23 @@
             }
             
             .nav-menu li {
-                margin: 15px 0;
+                margin: 10px 0;
+                width: 80%;
+                text-align: center;
+            }
+            
+            .nav-menu a {
+                display: block;
+                padding: 15px 20px;
+                width: 100%;
+                border-radius: var(--radius-md);
+                font-size: 1.1rem;
+            }
+            
+            .nav-menu a.active {
+                background: linear-gradient(135deg, var(--gold), var(--gold-light));
+                color: var(--black);
+                font-weight: 700;
             }
             
             .page-hero-title {
@@ -791,6 +821,8 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html" class="active">About</a></li>
                     <li><a href="services.html">Services</a></li>
+					<li><a href="armouredvehicles.html">Armoured Vehicles</a></li>
+					<li><a href="gallery.html">Gallery</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
@@ -798,67 +830,75 @@
     </header>
 
     <!-- Page Hero -->
-    <section class="page-hero">
-        <div class="container">
-            <div class="page-hero-content">
-                <h1 class="page-hero-title">About Blackout VIP</h1>
-                <p class="page-hero-subtitle">Our commitment to excellence in elite security solutions</p>
-            </div>
-        </div>
-    </section>
+    <!-- <section class="page-hero"> -->
+        <!-- <div class="container"> -->
+            <!-- <div class="page-hero-content"> -->
+                <!-- <h1 class="page-hero-title">About Blackout VIP</h1> -->
+                <!-- <p class="page-hero-subtitle">Our commitment to excellence in elite security solutions</p> -->
+            <!-- </div> -->
+        <!-- </div> -->
+    <!-- </section> -->
 
     <!-- About Section -->
     <section class="about">
-        <div class="container">
-            <div class="about-content">
-                <div class="about-text">
-                    <h2>Our Story</h2>
-                    <p>Founded in 2008, Blackout VIP emerged from a recognized need for truly elite security services that combine military precision with corporate discretion. Our founders, with backgrounds in special operations and executive protection, saw a gap in the market for security that doesn't just react to threats, but anticipates and neutralizes them before they materialize.</p>
-                    <p>Over the years, we've grown from a small team of specialists to an international security firm with operations across three continents, yet we've maintained our core philosophy: every client deserves personalized, proactive protection.</p>
-                    
-                    <div class="about-features">
-                        <div class="feature">
-                            <div class="feature-icon">
-                                <i class="fas fa-award"></i>
-                            </div>
-                            <div class="feature-text">
-                                <h4>Certified Excellence</h4>
-                                <p>All our personnel hold advanced certifications in executive protection and threat assessment.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="feature">
-                            <div class="feature-icon">
-                                <i class="fas fa-globe"></i>
-                            </div>
-                            <div class="feature-text">
-                                <h4>Global Network</h4>
-                                <p>Access to international security resources and intelligence networks for comprehensive protection.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="feature">
-                            <div class="feature-icon">
-                                <i class="fas fa-user-check"></i>
-                            </div>
-                            <div class="feature-text">
-                                <h4>Rigorous Screening</h4>
-                                <p>Thorough background checks and psychological evaluations for all security personnel.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="about-image">
-                    <img src="assets/New Blackout Logo.png" alt="Blackout VIP Logo" class="about-logo">
-                    <div class="experience-badge">
-                        <span class="number">15</span>
-                        Years of Excellence
-                    </div>
-                </div>
+  <div class="container">
+    <div class="section-title">
+      <h2>Our Story</h2>
+      <p>Blackout VIP was founded with a singular mission — to redefine security excellence through precision, discretion, and integrity.</p>
+    </div>
+
+    <div class="about-content">
+      <div class="about-text">
+        <p>
+          Blackout VIP emerged from a recognized need for truly elite security services that combine military precision with corporate discretion. Our founders, with backgrounds in special operations and executive protection, saw a gap in the market for security that doesn't just react to threats, but anticipates and neutralizes them before they materialize.
+        </p>
+        <p>
+          Over the years, we've grown from a small team of specialists to an established security firm, yet we've maintained our core philosophy: every client deserves personalized, proactive protection.
+        </p>
+
+        <div class="about-features">
+          <div class="feature">
+            <div class="feature-icon">
+              <i class="fas fa-award"></i>
             </div>
+            <div class="feature-text">
+              <h4>Certified Excellence</h4>
+              <p>All our personnel hold advanced certifications in executive protection and threat assessment.</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <div class="feature-text">
+              <h4>Vast Network</h4>
+              <p>Access to international security resources and intelligence networks for comprehensive protection.</p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">
+              <i class="fas fa-user-check"></i>
+            </div>
+            <div class="feature-text">
+              <h4>Rigorous Screening</h4>
+              <p>Thorough background checks and psychological evaluations for all security personnel.</p>
+            </div>
+          </div>
         </div>
-    </section>
+      </div>
+
+      <div class="about-image visible">
+        <img src="assets/New Blackout Logo.png" alt="Blackout VIP Logo" class="about-logo">
+        <!-- <div class="experience-badge"> -->
+          <!-- <span class="number">15+</span><br>Years Experience -->
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <!-- Values Section -->
     <section class="values">
@@ -904,45 +944,6 @@
         </div>
     </section>
 
-    <!-- Team Section -->
-    <section class="team">
-        <div class="container">
-            <div class="section-title">
-                <h2>Leadership Team</h2>
-                <p>The experts behind our elite security solutions</p>
-            </div>
-            
-            <div class="team-grid">
-                <div class="team-member">
-                    <div class="member-photo">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <h3>Marcus Thorne</h3>
-                    <div class="position">Founder & CEO</div>
-                    <p>Former special operations commander with 20+ years in executive protection. Marcus established Blackout VIP to redefine elite security standards.</p>
-                </div>
-                
-                <div class="team-member">
-                    <div class="member-photo">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <h3>Isabella Rossi</h3>
-                    <div class="position">Chief Operations Officer</div>
-                    <p>With a background in international security consulting, Isabella ensures our global operations maintain the highest standards of excellence.</p>
-                </div>
-                
-                <div class="team-member">
-                    <div class="member-photo">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <h3>David Chen</h3>
-                    <div class="position">Director of Security</div>
-                    <p>Former intelligence analyst specializing in threat assessment and risk mitigation. David oversees all protective operations.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -953,8 +954,7 @@
                     </div>
                     <p>Providing elite security solutions for distinguished clients worldwide since 2008. Our commitment to excellence and discretion sets us apart in the protection industry.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                     </div>
@@ -974,13 +974,13 @@
                 
                 <div class="footer-column">
                     <h3>Contact Info</h3>
-                    <ul class="footer-contact">
+                     <ul class="footer-contact">
                         <li>
                             <div class="icon">
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div>
-                                <p>124 Secure Plaza<br>Metropolis, MP 10001</p>
+                                <p>31 Michelson Rd<br>Westwood AH, Boksburg</p>
                             </div>
                         </li>
                         <li>
@@ -988,7 +988,7 @@
                                 <i class="fas fa-phone"></i>
                             </div>
                             <div>
-                                <p>+1 (555) 123-4567<br>+1 (555) 123-4568</p>
+                                <p>064 703 6552<br>079 313 8997</p>
                             </div>
                         </li>
                         <li>
@@ -996,7 +996,7 @@
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <div>
-                                <p>info@blackoutvip.com<br>security@blackoutvip.com</p>
+                                <p>info@blackoutvip.co.za<br>security@blackoutvip.co.za</p>
                             </div>
                         </li>
                     </ul>
@@ -1013,15 +1013,23 @@
     </footer>
 
     <script>
-        // Mobile Navigation Toggle
+        // Enhanced Mobile Navigation Toggle
         document.addEventListener('DOMContentLoaded', function() {
             const mobileToggle = document.querySelector('.mobile-toggle');
             const navMenu = document.querySelector('.nav-menu');
             
             mobileToggle.addEventListener('click', function() {
                 navMenu.classList.toggle('active');
-                mobileToggle.querySelector('i').classList.toggle('fa-bars');
-                mobileToggle.querySelector('i').classList.toggle('fa-times');
+                const icon = mobileToggle.querySelector('i');
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+                
+                // Add animation class for smooth transition
+                if (navMenu.classList.contains('active')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = '';
+                }
             });
             
             // Close mobile menu when clicking on a link
@@ -1031,16 +1039,53 @@
                     navMenu.classList.remove('active');
                     mobileToggle.querySelector('i').classList.add('fa-bars');
                     mobileToggle.querySelector('i').classList.remove('fa-times');
+                    document.body.style.overflow = '';
                 });
             });
             
-            // Active navigation link based on current page
-            const currentPage = window.location.pathname.split('/').pop();
-            const navLinksAll = document.querySelectorAll('.nav-menu a');
-            navLinksAll.forEach(link => {
-                if (link.getAttribute('href') === currentPage) {
-                    link.classList.add('active');
-                }
+            // Enhanced active page detection
+            function setActivePage() {
+                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+                const navLinks = document.querySelectorAll('.nav-menu a');
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    const linkPage = link.getAttribute('href');
+                    
+                    // Handle home page special case
+                    if (currentPage === 'index.html' || currentPage === '') {
+                        if (linkPage === 'index.html' || linkPage === './' || linkPage === '/' || linkPage === '#home') {
+                            link.classList.add('active');
+                        }
+                    } 
+                    // Handle other pages
+                    else if (linkPage === currentPage) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+            
+            // Set active page on load
+            setActivePage();
+            
+            // Enhanced smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    
+                    // Only prevent default for actual anchor links, not page links
+                    if (href !== '#' && !href.includes('.html')) {
+                        e.preventDefault();
+                        
+                        const targetElement = document.querySelector(href);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
             });
 
             // Scroll animations
