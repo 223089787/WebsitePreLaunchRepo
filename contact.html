@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Blackout VIP | Elite Security Solutions</title>
+    <title>Contact Us</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Favicon -->
@@ -63,34 +63,48 @@
         }
 
         .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
+    text-align: center;
+    margin-bottom: 80px;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.05), rgba(241, 196, 15, 0.02));
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(8px);
+}
 
-        .section-title h2 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            position: relative;
-            display: inline-block;
-        }
+.section-title h2 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, var(--gold), var(--gold-light));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+}
 
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--gold);
-            border-radius: 2px;
-        }
+.section-title h2::after {
+    content: '';
+    position: absolute;
+    bottom: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, var(--gold), var(--gold-light));
+    border-radius: 2px;
+    opacity: 0.8;
+}
 
-        .section-title p {
-            color: var(--text-light);
-            max-width: 600px;
-            margin: 0 auto;
-        }
+.section-title p {
+    color: var(--text-light);
+    max-width: 650px;
+    margin: 25px auto 0;
+    font-size: 1.15rem;
+    line-height: 1.7;
+}
+
 
         .btn {
             display: inline-block;
@@ -131,19 +145,19 @@
             left: 100%;
         }
 
-        /* Header Styles */
+        /* Enhanced Header Styles */
         header {
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(15px);
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
             transform: translateY(0);
-            transition: transform 0.4s ease;
+            transition: transform 0.4s ease, background 0.3s ease;
         }
 
         header.hidden {
@@ -154,7 +168,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 15px 0;
         }
 
         .logo {
@@ -179,45 +193,43 @@
             background: linear-gradient(to right, var(--gold), var(--gold-light));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-decoration: none;
+            text-decoration: none !important;
         }
 
         .nav-menu {
             display: flex;
             list-style: none;
+            gap: 10px;
         }
 
         .nav-menu li {
-            margin-left: 30px;
+            margin-left: 0;
         }
 
         .nav-menu a {
             color: var(--text);
-            font-weight: 500;
-            padding: 8px 0;
+            font-weight: 600;
+            padding: 12px 24px;
             position: relative;
             transition: var(--transition);
-            text-decoration: none;
+            text-decoration: none !important;
+            border-radius: var(--radius-sm);
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
         }
 
         .nav-menu a:hover {
             color: var(--gold);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(241, 196, 15, 0.05));
+            transform: translateY(-2px);
         }
 
-        .nav-menu a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gold);
-            transition: var(--transition);
-        }
-
-        .nav-menu a:hover::after {
-            width: 100%;
+        /* Active state for current page - Gradient Style */
+        .nav-menu a.active {
+            color: var(--black);
+            background: linear-gradient(135deg, var(--gold), var(--gold-light));
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            font-weight: 700;
         }
 
         .mobile-toggle {
@@ -351,6 +363,12 @@
             transition: opacity 0.8s ease, transform 0.8s ease;
         }
 
+
+		.contact-form-container:hover {
+    border-color: rgba(212, 175, 55, 0.4);
+    box-shadow: 0 15px 45px rgba(212, 175, 55, 0.15);
+}
+
         .contact-form-container.visible {
             opacity: 1;
             transform: translateX(0);
@@ -397,6 +415,48 @@
             min-height: 150px;
             resize: vertical;
         }
+
+
+		/* Fix white-on-white dropdown and improve input contrast */
+			select.form-control {
+				background: var(--medium-gray);
+				color: var(--text);
+				border: 1px solid rgba(212, 175, 55, 0.25);
+				appearance: none;
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				padding-right: 40px;
+				background-image: url('data:image/svg+xml;utf8,<svg fill="%23d4af37" height="20" viewBox="0 0 20 20" width="20" xmlns="http://www.w3.org/2000/svg"><polygon points="0,0 20,0 10,10"/></svg>');
+				background-repeat: no-repeat;
+				background-position: right 15px center;
+				background-size: 12px;
+				cursor: pointer;
+			}
+
+			/* Fix options dropdown background (browser-dependent) */
+			select.form-control option {
+				background: var(--dark-gray);
+				color: var(--text);
+			}
+
+			/* Make placeholders visible and consistent */
+			.form-control::placeholder {
+				color: var(--text-light);
+				opacity: 0.8;
+			}
+
+			/* Slightly increase contrast and glow on hover/focus */
+			.form-control:hover {
+				border-color: var(--gold);
+				box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+			}
+
+			/* Improve dropdown focus visibility */
+			select.form-control:focus {
+				border-color: var(--gold);
+				box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.25);
+			}
+
 
         /* Emergency Section */
         .emergency {
@@ -643,13 +703,7 @@
             text-decoration: underline;
         }
 
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-        }
-
+        /* Enhanced Mobile Menu Styles */
         @media (max-width: 768px) {
             .mobile-toggle {
                 display: block;
@@ -661,13 +715,14 @@
                 left: -100%;
                 width: 100%;
                 height: calc(100vh - 80px);
-                background: var(--black);
+                background: rgba(10, 10, 10, 0.98);
                 flex-direction: column;
                 align-items: center;
                 justify-content: flex-start;
                 padding-top: 50px;
                 transition: var(--transition);
                 border-top: 1px solid rgba(212, 175, 55, 0.1);
+                backdrop-filter: blur(20px);
             }
             
             .nav-menu.active {
@@ -675,7 +730,23 @@
             }
             
             .nav-menu li {
-                margin: 15px 0;
+                margin: 10px 0;
+                width: 80%;
+                text-align: center;
+            }
+            
+            .nav-menu a {
+                display: block;
+                padding: 15px 20px;
+                width: 100%;
+                border-radius: var(--radius-md);
+                font-size: 1.1rem;
+            }
+            
+            .nav-menu a.active {
+                background: linear-gradient(135deg, var(--gold), var(--gold-light));
+                color: var(--black);
+                font-weight: 700;
             }
             
             .page-hero-title {
@@ -738,6 +809,8 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="services.html">Services</a></li>
+					<li><a href="armouredvehicles.html">Armoured Vehicles</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
                     <li><a href="contact.html" class="active">Contact</a></li>
                 </ul>
             </nav>
@@ -745,14 +818,14 @@
     </header>
 
     <!-- Page Hero -->
-    <section class="page-hero">
-        <div class="container">
-            <div class="page-hero-content">
-                <h1 class="page-hero-title">Contact Blackout VIP</h1>
-                <p class="page-hero-subtitle">Secure your consultation with our elite protection specialists</p>
-            </div>
-        </div>
-    </section>
+    <!-- <section class="page-hero"> -->
+        <!-- <div class="container"> -->
+            <!-- <div class="page-hero-content"> -->
+                <!-- <h1 class="page-hero-title">Contact Blackout VIP</h1> -->
+                <!-- <p class="page-hero-subtitle">Secure your consultation with our elite protection specialists</p> -->
+            <!-- </div> -->
+        <!-- </div> -->
+    <!-- </section> -->
 
     <!-- Contact Section -->
     <section class="contact">
@@ -769,8 +842,9 @@
                             <i class="fas fa-map-marker-alt"></i>
                         </div>
                         <h3>Our Headquarters</h3>
-                        <p>124 Secure Plaza</p>
-                        <p>Metropolis, MP 10001</p>
+                        <p>31 Michelson Rd</p>
+                        <p>Westwood AH, Boksburg</p>
+						<p>1477</p>
                     </div>
                     
                     <div class="contact-card">
@@ -778,8 +852,8 @@
                             <i class="fas fa-phone"></i>
                         </div>
                         <h3>Phone Numbers</h3>
-                        <p>+1 (555) 123-4567</p>
-                        <p>+1 (555) 123-4568</p>
+                        <p>064 703 6552</p>
+                        <p>079 313 8997</p>
                     </div>
                     
                     <div class="contact-card">
@@ -830,6 +904,8 @@
                                 <option value="transport">Armored Transport</option>
                                 <option value="surveillance">Surveillance Solutions</option>
                                 <option value="consulting">Security Consulting</option>
+								<option value="consulting">B4 Vehicle Rental</option>
+								<option value="consulting">B6 Vehicle Rental</option>
                                 <option value="other">Other</option>
                             </select>
                         </div>
@@ -851,9 +927,9 @@
         <div class="container">
             <div class="emergency-content">
                 <div class="emergency-badge">24/7 EMERGENCY RESPONSE</div>
-                <a href="tel:+15551234567" class="emergency-phone">+1 (555) 123-4567</a>
+                <a href="tel:064 703 6552" class="emergency-phone">064 703 6552</a>
                 <p class="emergency-text">For immediate security assistance or emergency situations, our rapid response team is available 24 hours a day, 7 days a week.</p>
-                <a href="tel:+15551234567" class="btn">Call Emergency Line</a>
+                <a href="tel:064 703 6552" class="btn">Call Emergency Line</a>
             </div>
         </div>
     </section>
@@ -869,11 +945,11 @@
             <div class="faq-container">
                 <div class="faq-item">
                     <div class="faq-question">
-                        How quickly can you deploy a security team?
+                        How fast can your security team be on site?
                         <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>Our rapid response teams can be deployed within 2 hours for local assignments and within 24 hours for international operations, depending on the complexity and location of the assignment.</p>
+                        <p>We can deploy teams within 2–4 hours for local assignments. For high-risk locations or specialized requests, we plan logistics carefully to ensure safety and compliance with PSIRA standards.</p>
                     </div>
                 </div>
                 
@@ -883,17 +959,17 @@
                         <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>All Blackout VIP personnel undergo a rigorous 7-stage screening process including comprehensive background checks, psychological evaluations, skills assessment, and continuous performance monitoring.</p>
+                        <p>All Blackout VIP personnel undergo a rigorous screening process including comprehensive background checks, psychological evaluations, skills assessment, and continuous performance monitoring.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question">
-                        Do you provide international security services?
+                        Do you offer armed patrols or armored vehicle services?
                         <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>Yes, we maintain a global network of security professionals and have successfully operated in over 30 countries. Our international teams are specially trained in cross-cultural protocols and local threat landscapes.</p>
+                        <p>Yes. Our armed mobile patrols and armored vehicles provide secure, rapid-response protection across South Africa. Teams are trained, fully equipped, and ready to safeguard your property, assets, or personnel.</p>
                     </div>
                 </div>
                 
@@ -903,17 +979,17 @@
                         <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>We operate under strict non-disclosure agreements and employ compartmentalized information protocols. Our personnel are trained in operational security and discretion is fundamental to our service delivery.</p>
+                        <p>We follow strict confidentiality protocols with non-disclosure agreements, secure communications, and compartmentalized operations. Discretion is built into every aspect of our service.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item">
                     <div class="faq-question">
-                        What sets Blackout VIP apart from other security firms?
+                        Why choose Blackout VIP over other security companies?
                         <span class="faq-toggle"><i class="fas fa-chevron-down"></i></span>
                     </div>
                     <div class="faq-answer">
-                        <p>Our combination of elite personnel with special operations backgrounds, cutting-edge technology integration, proactive threat assessment methodologies, and unwavering commitment to client discretion distinguishes us in the security industry.</p>
+                        <p>Our team combines elite, PSIRA-certified personnel, advanced security technology, and proactive risk assessment strategies. With a focus on reliability, discretion, and local expertise, we deliver a level of service that stands out in South Africa.</p>
                     </div>
                 </div>
             </div>
@@ -930,8 +1006,7 @@
                     </div>
                     <p>Providing elite security solutions for distinguished clients worldwide since 2008. Our commitment to excellence and discretion sets us apart in the protection industry.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                     </div>
@@ -957,7 +1032,7 @@
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div>
-                                <p>124 Secure Plaza<br>Metropolis, MP 10001</p>
+                                <p>31 Michelson Rd<br>Westwood AH, Boksburg</p>
                             </div>
                         </li>
                         <li>
@@ -965,7 +1040,7 @@
                                 <i class="fas fa-phone"></i>
                             </div>
                             <div>
-                                <p>+1 (555) 123-4567<br>+1 (555) 123-4568</p>
+                                <p>064 703 6552<br>079 313 8997</p>
                             </div>
                         </li>
                         <li>
@@ -973,7 +1048,7 @@
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <div>
-                                <p>info@blackoutvip.com<br>security@blackoutvip.com</p>
+                                <p>info@blackoutvip.co.za<br>security@blackoutvip.co.za</p>
                             </div>
                         </li>
                     </ul>
@@ -982,23 +1057,31 @@
             
             <div class="footer-bottom">
                 <p>
-				&copy; <span id="year"></span> Blackout VIP Security. All Rights Reserved. |
-				<a>Privacy Policy</a> | <a>Terms of Service</a>
-			  </p>
+                &copy; <span id="year"></span> Blackout VIP Security. All Rights Reserved. |
+                <a>Privacy Policy</a> | <a>Terms of Service</a>
+              </p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile Navigation Toggle
+        // Enhanced Mobile Navigation Toggle
         document.addEventListener('DOMContentLoaded', function() {
             const mobileToggle = document.querySelector('.mobile-toggle');
             const navMenu = document.querySelector('.nav-menu');
             
             mobileToggle.addEventListener('click', function() {
                 navMenu.classList.toggle('active');
-                mobileToggle.querySelector('i').classList.toggle('fa-bars');
-                mobileToggle.querySelector('i').classList.toggle('fa-times');
+                const icon = mobileToggle.querySelector('i');
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+                
+                // Add animation class for smooth transition
+                if (navMenu.classList.contains('active')) {
+                    document.body.style.overflow = 'hidden';
+                } else {
+                    document.body.style.overflow = '';
+                }
             });
             
             // Close mobile menu when clicking on a link
@@ -1008,17 +1091,30 @@
                     navMenu.classList.remove('active');
                     mobileToggle.querySelector('i').classList.add('fa-bars');
                     mobileToggle.querySelector('i').classList.remove('fa-times');
+                    document.body.style.overflow = '';
                 });
             });
             
-            // Active navigation link based on current page
-            const currentPage = window.location.pathname.split('/').pop();
-            const navLinksAll = document.querySelectorAll('.nav-menu a');
-            navLinksAll.forEach(link => {
-                if (link.getAttribute('href') === currentPage) {
-                    link.classList.add('active');
-                }
-            });
+            // Enhanced active page detection
+            function setActivePage() {
+                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+                const navLinks = document.querySelectorAll('.nav-menu a');
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    const linkPage = link.getAttribute('href');
+                    
+                    // Check if this link matches current page
+                    if (linkPage === currentPage || 
+                       (currentPage === '' && linkPage === 'index.html') ||
+                       (currentPage === 'index.html' && linkPage === 'index.html')) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+            
+            // Set active page on load
+            setActivePage();
 
             // FAQ Toggle
             const faqItems = document.querySelectorAll('.faq-item');
@@ -1105,10 +1201,10 @@
             
             // Initial check for elements in view
             checkVisibility();
-			
-			 // ✅ Auto-update footer year
-			const yearEl = document.getElementById("year");
-			if (yearEl) yearEl.textContent = new Date().getFullYear();
+            
+            // ✅ Auto-update footer year
+            const yearEl = document.getElementById("year");
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
         });
     </script>
 </body>
