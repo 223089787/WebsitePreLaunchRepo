@@ -3,30 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>RSNT Accounting | Professional Financial Services</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/Blackout Logo Cropped.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         /* Modern CSS Reset and Variables */
         :root {
-            --black: #0a0a0a;
-            --dark-gray: #1a1a1a;
-            --medium-gray: #2a2a2a;
-            --gold: #d4af37;
-            --gold-light: #f1c40f;
-            --gold-dark: #b8941f;
-            --text: #f5f5f5;
-            --text-light: #b0b0b0;
-            --card-bg: rgba(255, 255, 255, 0.05);
-            --card-border: rgba(212, 175, 55, 0.2);
-            --radius-lg: 20px;
-            --radius-md: 15px;
-            --radius-sm: 10px;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --blue-primary: #1e3a8a;
+            --blue-light: #3b82f6;
+            --blue-dark: #1e40af;
+            --blue-accent: #2563eb;
+            --red-primary: #dc2626;
+            --red-light: #ef4444;
+            --red-dark: #b91c1c;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-400: #9ca3af;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            --text: #1f2937;
+            --text-light: #6b7280;
+            --white: #ffffff;
+            --card-bg: #ffffff;
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --card-shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
@@ -36,11 +47,18 @@
         }
 
         body {
-            font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+            font-family: 'Inter', sans-serif;
+            background-color: var(--gray-50);
             color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1rem;
         }
 
         .container {
@@ -63,99 +81,95 @@
         }
 
         .section-title {
-    text-align: center;
-    margin-bottom: 80px;
-    padding: 60px 20px;
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.05), rgba(241, 196, 15, 0.02));
-    border: 1px solid rgba(212, 175, 55, 0.15);
-    border-radius: var(--radius-lg);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(8px);
-}
+            text-align: center;
+            margin-bottom: 80px;
+        }
 
-.section-title h2 {
-    font-size: 2.8rem;
-    font-weight: 800;
-    margin-bottom: 20px;
-    background: linear-gradient(to right, var(--gold), var(--gold-light));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    position: relative;
-}
+        .section-title h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--blue-primary);
+            position: relative;
+            display: inline-block;
+        }
 
-.section-title h2::after {
-    content: '';
-    position: absolute;
-    bottom: -14px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 3px;
-    background: linear-gradient(to right, var(--gold), var(--gold-light));
-    border-radius: 2px;
-    opacity: 0.8;
-}
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--red-primary);
+            border-radius: 2px;
+        }
 
-.section-title p {
-    color: var(--text-light);
-    max-width: 650px;
-    margin: 25px auto 0;
-    font-size: 1.15rem;
-    line-height: 1.7;
-}
-
+        .section-title p {
+            color: var(--text-light);
+            max-width: 650px;
+            margin: 25px auto 0;
+            font-size: 1.15rem;
+            line-height: 1.7;
+        }
 
         .btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
             padding: 14px 32px;
-            background: var(--gold);
-            color: var(--black);
+            background: var(--blue-primary);
+            color: var(--white);
             border: none;
             border-radius: var(--radius-sm);
-            font-weight: 700;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             cursor: pointer;
             transition: var(--transition);
-            box-shadow: var(--shadow);
+            box-shadow: var(--card-shadow);
             position: relative;
             overflow: hidden;
             text-decoration: none !important;
+            font-size: 0.9rem;
         }
 
         .btn:hover {
-            background: var(--gold-light);
+            background: var(--blue-light);
             transform: translateY(-3px);
-            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+            box-shadow: var(--card-shadow-hover);
         }
 
-        .btn::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: 0.5s;
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--blue-primary);
+            color: var(--blue-primary);
+            text-decoration: none !important;
         }
 
-        .btn:hover::after {
-            left: 100%;
+        .btn-secondary:hover {
+            background: rgba(30, 58, 138, 0.05);
+        }
+
+        .btn-red {
+            background: var(--red-primary);
+        }
+
+        .btn-red:hover {
+            background: var(--red-light);
         }
 
         /* Enhanced Header Styles */
         header {
-            background: rgba(10, 10, 10, 0.98);
-            backdrop-filter: blur(15px);
+            background: var(--white);
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
-            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
             transform: translateY(0);
             transition: transform 0.4s ease, background 0.3s ease;
         }
@@ -168,31 +182,37 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
+            padding: 20px 0;
         }
 
         .logo {
             display: flex;
             align-items: center;
+            gap: 12px;
         }
 
-        .logo-img {
+        .logo-icon {
+            width: 50px;
             height: 50px;
-            width: auto;
-            margin-right: 15px;
+            background: var(--blue-primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border-radius: var(--radius-sm);
             transition: var(--transition);
         }
 
-        .logo-img:hover {
+        .logo-icon:hover {
             transform: scale(1.05);
         }
 
         .logo-text {
             font-size: 1.8rem;
             font-weight: 700;
-            background: linear-gradient(to right, var(--gold), var(--gold-light));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--blue-primary);
             text-decoration: none !important;
         }
 
@@ -208,130 +228,153 @@
 
         .nav-menu a {
             color: var(--text);
-            font-weight: 600;
+            font-weight: 500;
             padding: 12px 24px;
             position: relative;
             transition: var(--transition);
             text-decoration: none !important;
             border-radius: var(--radius-sm);
             font-size: 0.95rem;
-            letter-spacing: 0.5px;
         }
 
         .nav-menu a:hover {
-            color: var(--gold);
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(241, 196, 15, 0.05));
-            transform: translateY(-2px);
+            color: var(--blue-primary);
+            background: rgba(30, 58, 138, 0.05);
         }
 
-        /* Active state for current page - Gradient Style */
+        /* Active state for current page */
         .nav-menu a.active {
-            color: var(--black);
-            background: linear-gradient(135deg, var(--gold), var(--gold-light));
-            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
-            font-weight: 700;
+            color: var(--blue-primary);
+            font-weight: 600;
+        }
+
+        .nav-menu a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 3px;
+            background: var(--blue-primary);
+            border-radius: 2px;
         }
 
         .mobile-toggle {
             display: none;
             font-size: 24px;
             cursor: pointer;
-            color: var(--gold);
+            color: var(--blue-primary);
         }
 
-       /* Hero Section */
-		.hero {
-			min-height: 100vh;
-			display: flex;
-			align-items: center;
-			position: relative;
-			overflow: hidden;
-			padding-top: 100px;
-			background: linear-gradient(rgba(10, 10, 10, 0.6), rgba(10, 10, 10, 0.7)), url('assets/Background Image 2.jpg') no-repeat center center;
-			background-size: cover;
-			opacity: 1 !important;
-			transform: none !important;
-		}
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 100px;
+            background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 100%);
+        }
 
         .hero-content {
-            max-width: 800px;
-            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-text {
+            max-width: 600px;
         }
 
         .hero-badge {
-            display: inline-block;
-            background: rgba(212, 175, 55, 0.2);
-            color: var(--gold);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(220, 38, 38, 0.1);
+            color: var(--red-primary);
             padding: 8px 20px;
             border-radius: 30px;
             font-size: 0.9rem;
             font-weight: 600;
             margin-bottom: 20px;
-            border: 1px solid rgba(212, 175, 55, 0.3);
+            border: 1px solid rgba(220, 38, 38, 0.2);
             transition: var(--transition);
             text-decoration: none !important;
-            animation: fadeInUp 0.8s ease 0.2s both;
         }
 
         .hero-title {
-            font-size: 4rem;
-            font-weight: 800;
+            font-size: 3.5rem;
+            font-weight: 700;
             line-height: 1.1;
             margin-bottom: 20px;
-            background: linear-gradient(to right, var(--text), var(--gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--blue-primary);
             text-decoration: none !important;
-            animation: fadeInUp 0.8s ease 0.4s both;
         }
 
         .hero-subtitle {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             color: var(--text-light);
             margin-bottom: 30px;
             text-decoration: none !important;
-            animation: fadeInUp 0.8s ease 0.6s both;
         }
 
-        .hero-text {
+        .hero-text p {
             font-size: 1.1rem;
             margin-bottom: 40px;
             max-width: 600px;
             text-decoration: none !important;
-            animation: fadeInUp 0.8s ease 0.8s both;
+            color: var(--text-light);
         }
 
         .hero-btns {
             display: flex;
             gap: 20px;
-            animation: fadeInUp 0.8s ease 1s both;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .hero-image {
+            position: relative;
         }
 
-        .btn-secondary {
-            background: transparent;
-            border: 2px solid var(--gold);
-            color: var(--gold);
-            text-decoration: none !important;
+        .hero-img {
+            width: 100%;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--card-shadow-hover);
         }
 
-        .btn-secondary:hover {
-            background: rgba(212, 175, 55, 0.1);
+        .hero-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding: 30px;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--card-shadow);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--blue-primary);
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-top: 5px;
         }
 
         /* Services Section */
         .services {
-            background: var(--dark-gray);
+            background: var(--white);
         }
 
         .services-grid {
@@ -346,8 +389,8 @@
             padding: 40px 30px;
             text-align: center;
             transition: var(--transition);
-            border: 1px solid var(--card-border);
-            backdrop-filter: blur(10px);
+            border: 1px solid var(--gray-200);
+            box-shadow: var(--card-shadow);
             position: relative;
             overflow: hidden;
             opacity: 0;
@@ -367,15 +410,15 @@
             left: 0;
             width: 100%;
             height: 5px;
-            background: var(--gold);
+            background: var(--blue-primary);
             transform: scaleX(0);
             transition: var(--transition);
         }
 
         .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: var(--shadow);
-            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: var(--card-shadow-hover);
+            border-color: rgba(30, 58, 138, 0.2);
         }
 
         .service-card:hover::before {
@@ -385,77 +428,77 @@
         .service-icon {
             width: 80px;
             height: 80px;
-            background: rgba(212, 175, 55, 0.1);
+            background: rgba(30, 58, 138, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 25px;
             transition: var(--transition);
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(30, 58, 138, 0.2);
         }
 
         .service-card:hover .service-icon {
-            background: var(--gold);
+            background: var(--blue-primary);
             transform: rotateY(180deg);
         }
 
         .service-icon i {
             font-size: 32px;
-            color: var(--gold);
+            color: var(--blue-primary);
             transition: var(--transition);
         }
 
         .service-card:hover .service-icon i {
-            color: var(--black);
+            color: var(--white);
         }
 
         .service-card h3 {
             font-size: 1.5rem;
             margin-bottom: 15px;
-            color: var(--gold-light);
+            color: var(--blue-primary);
             text-decoration: none !important;
         }
 
         .service-card p {
             color: var(--text-light);
             text-decoration: none !important;
+            margin-bottom: 20px;
+        }
+
+        .service-link {
+            color: var(--blue-primary);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            transition: var(--transition);
+        }
+
+        .service-link:hover {
+            color: var(--blue-light);
+            gap: 10px;
         }
 
         /* About Section */
         .about {
-            background: var(--black);
+            background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 100%);
             position: relative;
             overflow: hidden;
         }
 
-        .about::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 40%;
-            height: 100%;
-            background: linear-gradient(135deg, transparent 0%, rgba(212, 175, 55, 0.05) 100%);
-            z-index: 0;
-        }
-
         .about-content {
-            display: flex;
-            align-items: center;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 60px;
-            position: relative;
-            z-index: 1;
-        }
-
-        .about-text {
-            flex: 1;
+            align-items: center;
         }
 
         .about-text h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
-            color: var(--gold-light);
+            color: var(--blue-primary);
             text-decoration: none !important;
         }
 
@@ -474,8 +517,8 @@
             align-items: flex-start;
             margin-bottom: 25px;
             transition: var(--transition);
-            padding: 10px;
-            border-radius: var(--radius-sm);
+            padding: 15px;
+            border-radius: var(--radius-md);
             opacity: 0;
             transform: translateX(-20px);
             transition: opacity 0.6s ease, transform 0.6s ease, background 0.3s ease;
@@ -487,43 +530,42 @@
         }
 
         .feature:hover {
-            background: rgba(212, 175, 55, 0.05);
+            background: rgba(220, 38, 38, 0.05);
             transform: translateX(5px);
         }
 
         .feature-icon {
             width: 50px;
             height: 50px;
-            background: rgba(212, 175, 55, 0.1);
+            background: rgba(220, 38, 38, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-right: 20px;
             flex-shrink: 0;
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(220, 38, 38, 0.2);
             transition: var(--transition);
         }
 
         .feature:hover .feature-icon {
-            background: rgba(212, 175, 55, 0.2);
+            background: rgba(220, 38, 38, 0.2);
             transform: scale(1.1);
         }
 
         .feature-icon i {
-            color: var(--gold);
+            color: var(--red-primary);
             font-size: 20px;
         }
 
         .feature-text h4 {
             font-size: 1.2rem;
             margin-bottom: 5px;
-            color: var(--gold-light);
+            color: var(--red-primary);
             text-decoration: none !important;
         }
 
         .about-image {
-            flex: 1;
             position: relative;
             opacity: 0;
             transform: translateX(20px);
@@ -535,45 +577,29 @@
             transform: translateX(0);
         }
 
-        .about-logo {
+        .about-img {
             width: 100%;
-            max-width: 500px;
-            height: auto;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow);
-            border: 1px solid rgba(212, 175, 55, 0.2);
-            transition: var(--transition);
-        }
-
-        .about-logo:hover {
-            transform: scale(1.02);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--card-shadow-hover);
         }
 
         .experience-badge {
             position: absolute;
             bottom: -20px;
             right: -20px;
-            background: var(--gold);
-            color: var(--black);
+            background: var(--red-primary);
+            color: var(--white);
             padding: 20px;
-            border-radius: var(--radius-md);
+            border-radius: var(--radius-lg);
             text-align: center;
-            box-shadow: var(--shadow);
+            box-shadow: var(--card-shadow-hover);
             font-weight: 700;
             transition: var(--transition);
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-10px); }
-            60% { transform: translateY(-5px); }
         }
 
         .experience-badge:hover {
             transform: scale(1.05);
-            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
-            animation: none;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
         }
 
         .experience-badge .number {
@@ -583,24 +609,226 @@
             line-height: 1;
         }
 
+        /* Why Choose Us Section */
+        .why-us {
+            background: var(--white);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 40px 30px;
+            border-radius: var(--radius-lg);
+            background: var(--card-bg);
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            border: 1px solid var(--gray-200);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+
+        .feature-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+            border-color: rgba(30, 58, 138, 0.2);
+        }
+
+        .feature-icon-large {
+            width: 80px;
+            height: 80px;
+            background: rgba(30, 58, 138, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            transition: var(--transition);
+            border: 1px solid rgba(30, 58, 138, 0.2);
+        }
+
+        .feature-card:hover .feature-icon-large {
+            background: var(--blue-primary);
+            transform: scale(1.1);
+        }
+
+        .feature-icon-large i {
+            font-size: 32px;
+            color: var(--blue-primary);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-icon-large i {
+            color: var(--white);
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--blue-primary);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 100%);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            border: 1px solid var(--gray-200);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+        }
+
+        .testimonial-content {
+            margin-bottom: 20px;
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--blue-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: bold;
+        }
+
+        .author-info h4 {
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .author-info p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--white);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            color: var(--blue-primary);
+            margin-bottom: 20px;
+        }
+
+        .contact-details {
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .contact-icon {
+            background-color: var(--red-primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .contact-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .contact-form {
+            background: var(--gray-50);
+            padding: 40px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--gray-200);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--gray-300);
+            border-radius: var(--radius-sm);
+            font-family: inherit;
+            transition: var(--transition);
+            background: var(--white);
+            color: var(--text);
+        }
+
+        .form-control:focus {
+            border-color: var(--blue-primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
         /* CTA Section */
         .cta {
-            background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+            background: linear-gradient(135deg, var(--blue-primary) 0%, var(--blue-dark) 100%);
             text-align: center;
             position: relative;
             overflow: hidden;
-            color: var(--black);
-        }
-
-        .cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.1)" d="M0,0 L1000,0 L1000,1000 L0,1000 Z"></path></svg>');
-            background-size: cover;
+            color: var(--white);
         }
 
         .cta-content {
@@ -624,225 +852,19 @@
         }
 
         .cta .btn {
-            background: var(--black);
-            color: var(--gold);
+            background: var(--white);
+            color: var(--blue-primary);
         }
 
         .cta .btn:hover {
-            background: var(--dark-gray);
+            background: var(--gray-100);
         }
-
-        /* Testimonials */
-        .testimonials {
-            background: var(--dark-gray);
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .testimonial-card {
-            background: var(--card-bg);
-            border-radius: var(--radius-lg);
-            padding: 30px;
-            border: 1px solid var(--card-border);
-            transition: var(--transition);
-            position: relative;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-        }
-
-        .testimonial-card.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow);
-            border-color: rgba(212, 175, 55, 0.4);
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-            position: relative;
-            text-decoration: none !important;
-        }
-
-        .testimonial-text::before {
-            content: '"';
-            font-size: 4rem;
-            color: var(--gold);
-            position: absolute;
-            top: -20px;
-            left: -10px;
-            opacity: 0.3;
-            line-height: 1;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-        }
-
-        .author-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--gold);
-            margin-right: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--black);
-            font-weight: bold;
-            transition: var(--transition);
-        }
-
-        .testimonial-card:hover .author-avatar {
-            transform: scale(1.1);
-        }
-
-        .author-info h4 {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-            color: var(--gold-light);
-            text-decoration: none !important;
-        }
-
-        .author-info p {
-            color: var(--text-light);
-            font-size: 0.9rem;
-            text-decoration: none !important;
-        }
-
-
-		/* PSIRA Membership Section */
-.psira-section {
-    background: var(--dark-gray);
-    padding: 100px 0;
-    position: relative;
-    overflow: hidden;
-}
-
-.psira-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.03) 0%, transparent 100%);
-    z-index: 0;
-}
-
-.psira-content {
-    display: flex;
-    align-items: center;
-    gap: 60px;
-    position: relative;
-    z-index: 1;
-}
-
-.psira-text {
-    flex: 1;
-}
-
-.psira-text h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: var(--gold-light);
-    text-decoration: none !important;
-}
-
-.psira-text p {
-    margin-bottom: 25px;
-    color: var(--text-light);
-    font-size: 1.1rem;
-    line-height: 1.7;
-    text-decoration: none !important;
-}
-
-.psira-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 15px;
-    background: rgba(212, 175, 55, 0.1);
-    padding: 20px 30px;
-    border-radius: var(--radius-lg);
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    margin-top: 20px;
-    transition: var(--transition);
-}
-
-.psira-badge:hover {
-    background: rgba(212, 175, 55, 0.15);
-    transform: translateY(-3px);
-    box-shadow: var(--shadow);
-}
-
-.psira-badge i {
-    font-size: 2rem;
-    color: var(--gold);
-}
-
-.psira-badge-text {
-    font-weight: 600;
-    color: var(--gold-light);
-}
-
-.psira-image {
-    flex: 1;
-    text-align: center;
-    opacity: 0;
-    transform: translateX(20px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.psira-image.visible {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.psira-logo {
-    max-width: 300px;
-    height: auto;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow);
-    border: 2px solid rgba(212, 175, 55, 0.3);
-    transition: var(--transition);
-}
-
-.psira-logo:hover {
-    transform: scale(1.05);
-    border-color: var(--gold);
-    box-shadow: 0 15px 35px rgba(212, 175, 55, 0.2);
-}
-
-@media (max-width: 992px) {
-    .psira-content {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .psira-image {
-        margin-top: 40px;
-    }
-    
-    .psira-logo {
-        max-width: 250px;
-    }
-}
 
         /* Footer */
         footer {
-            background: var(--black);
+            background: var(--gray-800);
             padding: 80px 0 20px;
-            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            color: var(--gray-200);
         }
 
         .footer-content {
@@ -857,7 +879,7 @@
             margin-bottom: 25px;
             position: relative;
             padding-bottom: 10px;
-            color: var(--gold-light);
+            color: var(--white);
             text-decoration: none !important;
         }
 
@@ -868,7 +890,7 @@
             left: 0;
             width: 40px;
             height: 3px;
-            background: var(--gold);
+            background: var(--red-primary);
             border-radius: 2px;
         }
 
@@ -876,6 +898,7 @@
             display: flex;
             align-items: center;
             margin-bottom: 20px;
+            gap: 12px;
         }
 
         .footer-services a {
@@ -883,12 +906,12 @@
             margin-bottom: 10px;
             transition: var(--transition);
             padding: 5px 0;
-            color: var(--text-light);
+            color: var(--gray-400);
             text-decoration: none !important;
         }
 
         .footer-services a:hover {
-            color: var(--gold);
+            color: var(--red-light);
             transform: translateX(5px);
         }
 
@@ -901,24 +924,24 @@
         .footer-contact .icon {
             width: 40px;
             height: 40px;
-            background: rgba(212, 175, 55, 0.1);
+            background: rgba(239, 68, 68, 0.1);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-right: 15px;
             flex-shrink: 0;
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(239, 68, 68, 0.2);
             transition: var(--transition);
         }
 
         .footer-contact .icon:hover {
-            background: rgba(212, 175, 55, 0.2);
+            background: rgba(239, 68, 68, 0.2);
             transform: scale(1.1);
         }
 
         .footer-contact .icon i {
-            color: var(--gold);
+            color: var(--red-light);
         }
 
         .social-links {
@@ -936,22 +959,22 @@
             align-items: center;
             justify-content: center;
             transition: var(--transition);
-            border: 1px solid rgba(212, 175, 55, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             text-decoration: none !important;
         }
 
         .social-links a:hover {
-            background: var(--gold);
+            background: var(--red-primary);
             transform: translateY(-5px);
-            border-color: var(--gold);
+            border-color: var(--red-primary);
         }
 
         .social-links a:hover i {
-            color: var(--black);
+            color: var(--white);
         }
 
         .social-links a i {
-            color: var(--gold);
+            color: var(--gray-400);
         }
 
         .footer-bottom {
@@ -959,7 +982,7 @@
             padding-top: 20px;
             text-align: center;
             font-size: 0.9rem;
-            color: var(--text-light);
+            color: var(--gray-400);
         }
 
         /* Responsive Styles */
@@ -968,12 +991,18 @@
                 font-size: 3rem;
             }
             
-            .about-content {
-                flex-direction: column;
+            .hero-content,
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
             }
             
             .about-image {
                 margin-top: 40px;
+            }
+            
+            .hero-image {
+                order: -1;
             }
         }
 
@@ -988,14 +1017,13 @@
                 left: -100%;
                 width: 100%;
                 height: calc(100vh - 80px);
-                background: rgba(10, 10, 10, 0.98);
+                background: var(--white);
                 flex-direction: column;
                 align-items: center;
                 justify-content: flex-start;
                 padding-top: 50px;
                 transition: var(--transition);
-                border-top: 1px solid rgba(212, 175, 55, 0.1);
-                backdrop-filter: blur(20px);
+                border-top: 1px solid var(--gray-200);
             }
             
             .nav-menu.active {
@@ -1016,12 +1044,6 @@
                 font-size: 1.1rem;
             }
             
-            .nav-menu a.active {
-                background: linear-gradient(135deg, var(--gold), var(--gold-light));
-                color: var(--black);
-                font-weight: 700;
-            }
-            
             .hero-title {
                 font-size: 2.5rem;
             }
@@ -1031,12 +1053,12 @@
                 align-items: flex-start;
             }
             
-            .section {
+            section {
                 padding: 80px 0;
             }
 
             /* Mobile-specific animations */
-            .service-card, .testimonial-card {
+            .service-card, .feature-card {
                 transition-delay: 0s !important;
             }
         }
@@ -1054,12 +1076,13 @@
                 padding: 30px 20px;
             }
             
-            .logo-img {
-                height: 40px;
-            }
-            
             .logo-text {
                 font-size: 1.5rem;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 20px;
             }
         }
     </style>
@@ -1069,8 +1092,8 @@
     <header>
         <div class="container header-container">
             <div class="logo">
-                <img src="assets/Blackout Logo Cropped.png" alt="Blackout VIP Logo" class="logo-img">
-                <div class="logo-text">BLACKOUT VIP</div>
+                <div class="logo-icon">RSNT</div>
+                <div class="logo-text">RSNT Accounting</div>
             </div>
             
             <nav>
@@ -1079,12 +1102,12 @@
                 </div>
                 
                 <ul class="nav-menu">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="services.html">Services</a></li>
-					<li><a href="armouredvehicles.html">Armoured Vehicles</a></li>
-					<li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#why-us">Why Us</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
@@ -1094,13 +1117,37 @@
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <!-- <div class="hero-badge">ELITE SECURITY SOLUTIONS</div> -->
-                <h1 class="hero-title">EXCLUSIVE PROTECTION FOR THE DISTINGUISHED</h1>
-                <p class="hero-subtitle">Our security are ambassadors of protection</p>
-                <p class="hero-text">Blackout VIP delivers exceptional, high-quality security services tailored to protect clients, communities, and assets with the utmost discretion and professionalism.</p>
-                <div class="hero-btns">
-                    <a href="services.html" class="btn">Our Services</a>
-                    <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+                <div class="hero-text">
+                    <div class="hero-badge">
+                        <i class="fas fa-award"></i>
+                        TRUSTED FINANCIAL PARTNER
+                    </div>
+                    <h1 class="hero-title">Strategic Financial Solutions for Business Growth</h1>
+                    <p class="hero-subtitle">Expert accounting, tax, and advisory services to help your business thrive in a complex financial landscape.</p>
+                    <p>RSNT Accounting delivers comprehensive financial services tailored to protect your assets, optimize your tax position, and ensure regulatory compliance with the highest standards of professionalism.</p>
+                    <div class="hero-btns">
+                        <a href="#services" class="btn">Explore Services</a>
+                        <a href="#contact" class="btn btn-secondary">Schedule Consultation</a>
+                    </div>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">18+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Clients Served</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">R50M+</span>
+                            <span class="stat-label">Tax Savings</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Financial Analysis" class="hero-img">
                 </div>
             </div>
         </div>
@@ -1110,57 +1157,63 @@
     <section class="services" id="services">
         <div class="container">
             <div class="section-title">
-                <h2>Our Premium Services</h2>
-                <p>Comprehensive security solutions tailored to your specific needs</p>
+                <h2>Our Accounting Services</h2>
+                <p>Comprehensive financial solutions tailored to your business needs</p>
             </div>
             
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-user-shield"></i>
+                        <i class="fas fa-calculator"></i>
                     </div>
-                    <h3>Executive Protection</h3>
-                    <p>Round-the-clock security for high-profile individuals and corporate executives with discreet, professional protection teams.</p>
+                    <h3>Accounting & Bookkeeping</h3>
+                    <p>Complete financial record keeping, management accounts, and financial statement preparation for informed decision-making.</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-building-shield"></i>
+                        <i class="fas fa-search-dollar"></i>
                     </div>
-                    <h3>Asset Protection</h3>
-                    <p>Comprehensive security for valuable assets, properties, and facilities with advanced monitoring and response systems.</p>
+                    <h3>Auditing & Reviews</h3>
+                    <p>Independent financial statement audits, reviews, and compilations to ensure compliance, accuracy and stakeholder confidence.</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-people-arrows"></i>
+                        <i class="fas fa-file-invoice-dollar"></i>
                     </div>
-                    <h3>Event Security</h3>
-                    <p>Complete security management for corporate events, galas, and private functions with crowd control and access management.</p>
+                    <h3>Tax Services</h3>
+                    <p>Comprehensive tax planning, preparation, and compliance services for individuals, businesses, and corporations.</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-car-burst"></i>
+                        <i class="fas fa-briefcase"></i>
                     </div>
-                    <h3>Armored Transport</h3>
-                    <p>Secure transportation services with armored vehicles and trained personnel for high-value items and personnel.</p>
+                    <h3>Business Advisory</h3>
+                    <p>Strategic business planning, financial analysis, and growth strategies to help your business succeed and expand.</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-video"></i>
+                        <i class="fas fa-users"></i>
                     </div>
-                    <h3>Surveillance Solutions</h3>
-                    <p>Advanced monitoring systems and intelligence gathering for proactive threat assessment and prevention.</p>
+                    <h3>Payroll Services</h3>
+                    <p>Complete payroll processing, statutory reporting, and compliance management for your employees with accuracy and timeliness.</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
                 
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-headset"></i>
+                        <i class="fas fa-handshake"></i>
                     </div>
-                    <h3>Security Consulting</h3>
-                    <p>Expert risk assessment and security strategy development tailored to your specific requirements and vulnerabilities.</p>
+                    <h3>Company Secretarial</h3>
+                    <p>Company registrations, statutory compliance, corporate governance, and annual return submissions.</p>
+                    <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -1171,9 +1224,9 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2>Why Choose Blackout VIP</h2>
-                    <p>With experience in elite security services, our team consists of former military, law enforcement, and intelligence professionals who understand the nuances of high-stakes protection.</p>
-                    <p>We pride ourselves on discretion, professionalism, and the ability to adapt to any security challenge with precision and expertise.</p>
+                    <h2>Why Choose RSNT Accounting</h2>
+                    <p>With extensive experience in financial services, our team consists of qualified professionals who understand the nuances of accounting, taxation, and business advisory.</p>
+                    <p>We pride ourselves on accuracy, professionalism, and the ability to provide tailored financial solutions that drive business growth and ensure compliance.</p>
                     
                     <div class="about-features">
                         <div class="feature">
@@ -1182,17 +1235,17 @@
                             </div>
                             <div class="feature-text">
                                 <h4>Certified Excellence</h4>
-                                <p>All our personnel hold advanced certifications in executive protection and threat assessment.</p>
+                                <p>Our team holds advanced certifications in accounting, auditing, and taxation with continuous professional development.</p>
                             </div>
                         </div>
                         
                         <div class="feature">
                             <div class="feature-icon">
-                                <i class="fas fa-globe"></i>
+                                <i class="fas fa-chart-line"></i>
                             </div>
                             <div class="feature-text">
-                                <h4>Vast Network</h4>
-                                <p>Access to security resources and intelligence networks for comprehensive protection.</p>
+                                <h4>Business Growth Focus</h4>
+                                <p>We go beyond compliance to provide insights that help your business grow and maximize profitability.</p>
                             </div>
                         </div>
                         
@@ -1201,90 +1254,198 @@
                                 <i class="fas fa-user-check"></i>
                             </div>
                             <div class="feature-text">
-                                <h4>Rigorous Screening</h4>
-                                <p>Thorough background checks and psychological evaluations for all security personnel.</p>
+                                <h4>Personalized Service</h4>
+                                <p>Direct access to your dedicated accountant with services tailored to your specific business needs.</p>
                             </div>
                         </div>
                     </div>
                     
-                    <a href="contact.html" class="btn">Get in Touch</a>
+                    <a href="#contact" class="btn btn-red">Get in Touch</a>
                 </div>
                 
                 <div class="about-image">
-                    <img src="assets/New Blackout Logo.png" alt="Blackout VIP Logo" class="about-logo">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="RSNT Accounting Team" class="about-img">
+                    <div class="experience-badge">
+                        <span class="number">18+</span>
+                        Years Experience
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-<!-- PSIRA Membership Section -->
-<section class="psira-section" id="psira">
-    <div class="container">
-        <div class="psira-content">
-            <div class="psira-text">
-                <h2>PSIRA Registered & Trusted</h2>
-                <p>Blackout VIP is fully licensed and regulated under South Africa’s Private Security Industry Regulatory Authority (PSIRA). Our compliance with PSIRA standards reflects our dedication to lawful operations, professionalism, and excellence in service delivery.</p>
-                
-                <p>Our certification ensures that every member of our team meets strict standards for training, conduct, and ethics. This oversight gives our clients confidence that they are working with a legitimate and accountable security partner.</p>
-                
-                <p>With PSIRA accreditation, Blackout VIP is authorized to deliver trusted, high-quality security solutions while upholding the integrity of South Africa’s private security industry.</p>
-                
-               
+    <!-- Why Choose Us Section -->
+    <section class="why-us" id="why-us">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose RSNT</h2>
+                <p>Discover what sets us apart from other accounting firms</p>
             </div>
             
-            <div class="psira-image">
-                <img src="assets/Psira.jpg" alt="PSIRA - Private Security Industry Regulatory Authority" class="psira-logo">
-               
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon-large">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Expert Team</h3>
+                    <p>Our team consists of qualified professionals with extensive experience across various industries.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon-large">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Tailored Solutions</h3>
+                    <p>We customize our services to meet your specific business needs, goals, and compliance requirements.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon-large">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Personal Service</h3>
+                    <p>Direct access to your dedicated accountant with prompt responses and proactive advice.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon-large">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Proactive Approach</h3>
+                    <p>We don't just report on history; we help you plan for a successful financial future.</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-
+    </section>
 
     <!-- Testimonials Section -->
     <section class="testimonials" id="testimonials">
         <div class="container">
             <div class="section-title">
                 <h2>Client Testimonials</h2>
-                <p>What our distinguished clients say about our services</p>
+                <p>What our clients say about our accounting services</p>
             </div>
             
             <div class="testimonials-grid">
                 <div class="testimonial-card">
-                    <div class="testimonial-text">
-                        Blackout VIP handled security for one of our major corporate functions with absolute professionalism. Their team was discreet, well-coordinated, and maintained a calm presence throughout the event. We couldn’t have asked for better support.
+                    <div class="testimonial-content">
+                        "RSNT Accounting has been instrumental in our company's financial growth. Their strategic tax planning saved us over R500,000 last year alone."
                     </div>
                     <div class="testimonial-author">
-                        <div class="author-avatar">AC</div>
+                        <div class="author-avatar">JS</div>
                         <div class="author-info">
-                            <h4>A. Collins</h4>
-                            <!-- <p>CEO, Donovan Industries</p> -->
+                            <h4>John Smith</h4>
+                            <p>CEO, Tech Innovations Ltd</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="testimonial-card">
-                    <div class="testimonial-text">
-						I required personal protection during a short-term assignment. The team was reliable, professional, and made me feel safe without ever being intrusive. I would highly recommend their executive protection services.                    </div>
+                    <div class="testimonial-content">
+                        "The team at RSNT provides exceptional service. They're always available to answer questions and provide valuable financial insights for our business decisions."
+                    </div>
                     <div class="testimonial-author">
-                        <div class="author-avatar">TK</div>
+                        <div class="author-avatar">MJ</div>
                         <div class="author-info">
-                            <h4>T. Khumalo</h4>
-                            <!-- <p>International Speaker</p> -->
+                            <h4>Maria Johnson</h4>
+                            <p>Finance Director, Retail Solutions</p>
                         </div>
                     </div>
                 </div>
                 
                 <div class="testimonial-card">
-                    <div class="testimonial-text">
-					From the first consultation to the final debrief, the professionalism stood out. The Blackout VIP team anticipated our needs and managed every detail with precision and discretion.                    </div>
+                    <div class="testimonial-content">
+                        "As a small business owner, I appreciate how RSNT simplifies complex financial matters. Their payroll services have saved me countless hours of administrative work."
+                    </div>
                     <div class="testimonial-author">
-                        <div class="author-avatar">NS</div>
+                        <div class="author-avatar">RW</div>
                         <div class="author-info">
-                            <h4>N. Singh</h4>
-                            <!-- <p>Security Director, TechGlobal</p> -->
+                            <h4>Robert Williams</h4>
+                            <p>Owner, Williams Consulting</p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch with our team for personalized financial solutions</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <p>We're here to help with all your accounting and financial needs. Reach out to us today for a consultation.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Our Location</h4>
+                                <p>PO Box 236, Benoni, 1500, South Africa</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Phone Number</h4>
+                                <p>Reception: 011 423 2597</p>
+                                <p>Partner's Direct: 011 423 2364</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Email Address</h4>
+                                <p>contact@rsnt.co.za</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-fax"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h4>Fax</h4>
+                                <p>086 542 7898</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -1294,38 +1455,39 @@
     <section class="cta">
         <div class="container">
             <div class="cta-content">
-                <h2>Secure Your Peace of Mind Today</h2>
-                <p>When the stakes are high, only the best security solutions will suffice. Contact Blackout VIP for a confidential consultation.</p>
-                <a href="contact.html" class="btn">Request Consultation</a>
+                <h2>Secure Your Financial Future Today</h2>
+                <p>When it comes to your finances, only the best accounting solutions will suffice. Contact RSNT Accounting for a confidential consultation.</p>
+                <a href="#contact" class="btn">Request Consultation</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact">
+    <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
                     <div class="footer-logo">
-                        <div class="logo-text">BLACKOUT VIP</div>
+                        <div class="logo-icon">RSNT</div>
+                        <div class="logo-text">RSNT Accounting</div>
                     </div>
-                    <p>Providing elite security solutions for distinguished clients. Our commitment to excellence and discretion sets us apart in the protection industry.</p>
+                    <p>Providing professional accounting and financial services to businesses and individuals. Our commitment to accuracy and excellence sets us apart in the financial industry.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
                 
                 <div class="footer-column">
                     <h3>Our Services</h3>
                     <div class="footer-services">
-                        <a href="services.html">Executive Protection</a>
-                        <a href="services.html">Asset Security</a>
-                        <a href="services.html">Event Security</a>
-                        <a href="services.html">Armored Transport</a>
-                        <a href="services.html">Surveillance Solutions</a>
-                        <a href="services.html">Security Consulting</a>
+                        <a href="#services">Accounting & Bookkeeping</a>
+                        <a href="#services">Auditing & Reviews</a>
+                        <a href="#services">Tax Services</a>
+                        <a href="#services">Business Advisory</a>
+                        <a href="#services">Payroll Services</a>
+                        <a href="#services">Company Secretarial</a>
                     </div>
                 </div>
                 
@@ -1337,7 +1499,7 @@
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div>
-                                <p>31 Michelson Rd<br>Westwood AH, Boksburg</p>
+                                <p>PO Box 236<br>Benoni, 1500</p>
                             </div>
                         </li>
                         <li>
@@ -1345,7 +1507,7 @@
                                 <i class="fas fa-phone"></i>
                             </div>
                             <div>
-                                <p>064 703 6552<br>079 313 8997</p>
+                                <p>011 423 2597<br>011 423 2364</p>
                             </div>
                         </li>
                         <li>
@@ -1353,7 +1515,15 @@
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <div>
-                                <p>info@blackoutvip.co.za<br>security@blackoutvip.co.za</p>
+                                <p>contact@rsnt.co.za</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <p>Mon-Fri: 8:00-17:00</p>
                             </div>
                         </li>
                     </ul>
@@ -1361,15 +1531,12 @@
             </div>
             
             <div class="footer-bottom">
-			  <p>
-				&copy; <span id="year"></span> Blackout VIP Security. All Rights Reserved. |
-				<a>Privacy Policy</a> | <a>Terms of Service</a>
-			  </p>
-			</div>
+                <p>&copy; <span id="year"></span> RSNT Accounting. All Rights Reserved. | Designed by <a href="http://www.sa-computers.co.za" target="_blank" style="color: var(--red-light);">SA Computers</a></p>
+            </div>
         </div>
     </footer>
 
-   <script>
+    <script>
         // Enhanced Mobile Navigation Toggle
         document.addEventListener('DOMContentLoaded', function() {
             const mobileToggle = document.querySelector('.mobile-toggle');
@@ -1402,28 +1569,19 @@
             
             // Enhanced active page detection
             function setActivePage() {
-                const currentPage = window.location.pathname.split('/').pop() || 'index.html';
                 const navLinks = document.querySelectorAll('.nav-menu a');
                 
                 navLinks.forEach(link => {
                     link.classList.remove('active');
-                    const linkPage = link.getAttribute('href');
-                    
-                    // Handle home page special case
-                    if (currentPage === 'index.html' || currentPage === '') {
-                        if (linkPage === 'index.html' || linkPage === './' || linkPage === '/' || linkPage === '#home') {
-                            link.classList.add('active');
-                        }
-                    } 
-                    // Handle other pages
-                    else if (linkPage === currentPage) {
+                    if (link.getAttribute('href') === window.location.hash) {
                         link.classList.add('active');
                     }
-                    // Handle hash links on index page
-                    else if (currentPage === 'index.html' && linkPage.startsWith('#')) {
-                        // This will be handled by the scroll-based active class
-                    }
                 });
+                
+                // If no hash or hash is #home, set home as active
+                if (!window.location.hash || window.location.hash === '#home') {
+                    document.querySelector('.nav-menu a[href="#home"]').classList.add('active');
+                }
             }
             
             // Set active page on load
@@ -1470,8 +1628,8 @@
                     }
                 });
                 
-                // If at top of page and on index.html, set home as active
-                if (window.pageYOffset < 100 && window.location.pathname.endsWith('index.html')) {
+                // If at top of page, set home as active
+                if (window.pageYOffset < 100) {
                     navLinks.forEach(link => {
                         if (link.getAttribute('href') === '#home') {
                             link.classList.add('active');
@@ -1484,10 +1642,9 @@
             function checkVisibility() {
                 const sections = document.querySelectorAll('section');
                 const serviceCards = document.querySelectorAll('.service-card');
-                const testimonialCards = document.querySelectorAll('.testimonial-card');
+                const featureCards = document.querySelectorAll('.feature-card');
                 const features = document.querySelectorAll('.feature');
                 const aboutImage = document.querySelector('.about-image');
-                const psiraImage = document.querySelector('.psira-image');
                 
                 sections.forEach(section => {
                     const sectionTop = section.getBoundingClientRect().top;
@@ -1510,12 +1667,12 @@
                     }
                 });
                 
-                testimonialCards.forEach((card, index) => {
+                featureCards.forEach((card, index) => {
                     const cardTop = card.getBoundingClientRect().top;
                     const windowHeight = window.innerHeight;
                     
                     if (cardTop < windowHeight * 0.85) {
-                        // Stagger the animation for testimonial cards
+                        // Stagger the animation for feature cards
                         setTimeout(() => {
                             card.classList.add('visible');
                         }, index * 100);
@@ -1542,16 +1699,6 @@
                         aboutImage.classList.add('visible');
                     }
                 }
-                
-                // PSIRA Image Animation - ADDED THIS
-                if (psiraImage) {
-                    const psiraImageTop = psiraImage.getBoundingClientRect().top;
-                    const windowHeight = window.innerHeight;
-                    
-                    if (psiraImageTop < windowHeight * 0.85) {
-                        psiraImage.classList.add('visible');
-                    }
-                }
             }
             
             // Hide header on scroll down, show on scroll up
@@ -1570,14 +1717,20 @@
                 checkVisibility();
             });
             
+            // Form submission
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your message! We will get back to you soon.');
+                this.reset();
+            });
+            
             // Initial check for elements in view
             checkVisibility();
-			
-			 // ✅ Auto-update footer year
-			const yearEl = document.getElementById("year");
-			if (yearEl) yearEl.textContent = new Date().getFullYear();
+            
+            // Auto-update footer year
+            const yearEl = document.getElementById("year");
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
         });
     </script>
 </body>
 </html>
-
