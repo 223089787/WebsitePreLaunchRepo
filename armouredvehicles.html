@@ -1212,26 +1212,25 @@
                 padding: 80px 0;
             }
 
-            /* MOBILE TAB SELECTOR - PILL STYLE */
+            /* MOBILE TAB SELECTOR - STATIC PILL STYLE */
             .tab-selector {
-                position: sticky;
-                top: 80px;
+                position: relative; /* Changed from sticky to relative */
                 z-index: 999;
                 background: rgba(10, 10, 10, 0.95);
                 backdrop-filter: blur(20px);
-                border-radius: 50px; /* Changed from 0 to pill shape */
+                border-radius: 50px;
                 padding: 15px 20px;
-                margin: 20px auto 40px auto; /* Center it with auto margins */
-                border: 1px solid var(--card-border); /* Added border */
+                margin: 0 auto 40px auto; /* Removed top margin */
+                border: 1px solid var(--card-border);
                 box-shadow: 0 5px 25px rgba(0, 0, 0, 0.7);
-                max-width: 90%; /* Limit width for pill shape */
-                width: auto; /* Auto width for pill */
+                max-width: 90%;
+                width: auto;
             }
             
             .tab-button {
                 padding: 15px 25px;
                 font-size: 0.9rem;
-                border-radius: 25px; /* More rounded buttons */
+                border-radius: 25px;
                 margin: 0 5px;
                 font-weight: 600;
             }
@@ -1302,18 +1301,17 @@
                 height: 35px;
             }
 
-            /* Adjust pill nav for very small screens */
+            /* Adjust static pill nav for very small screens */
             .tab-selector {
                 padding: 12px 15px;
-                top: 70px;
-                max-width: 95%; /* Slightly wider on small screens */
-                border-radius: 40px; /* Slightly less rounded on small screens */
+                max-width: 95%;
+                border-radius: 40px;
             }
             
             .tab-button {
                 padding: 12px 20px;
                 font-size: 0.85rem;
-                border-radius: 20px; /* Slightly less rounded buttons */
+                border-radius: 20px;
             }
         }
     </style>
