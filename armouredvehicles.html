@@ -1070,6 +1070,71 @@
             text-decoration: underline;
         }
 
+        /* Luxury Info Block Styles */
+        .luxury-info-block {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(241, 196, 15, 0.05));
+            border: 1px solid var(--card-border);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            margin-bottom: 60px;
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .luxury-info-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, var(--gold), var(--gold-light));
+        }
+
+        .luxury-info-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius-md);
+            transition: var(--transition);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .info-item:hover {
+            transform: translateY(-5px);
+            background: rgba(212, 175, 55, 0.1);
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+
+        .info-item i {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-right: 20px;
+            width: 60px;
+            text-align: center;
+        }
+
+        .info-text h4 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: var(--gold-light);
+        }
+
+        .info-text p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
         /* Responsive Styles */
         @media (max-width: 992px) {
             .vehicle-comparison {
@@ -1146,16 +1211,29 @@
             .section {
                 padding: 80px 0;
             }
-            
+
+            /* MOBILE TAB SELECTOR - PILL STYLE */
             .tab-selector {
-                flex-direction: column;
-                max-width: 300px;
-                border-radius: var(--radius-md);
+                position: sticky;
+                top: 80px;
+                z-index: 999;
+                background: rgba(10, 10, 10, 0.95);
+                backdrop-filter: blur(20px);
+                border-radius: 50px; /* Changed from 0 to pill shape */
+                padding: 15px 20px;
+                margin: 20px auto 40px auto; /* Center it with auto margins */
+                border: 1px solid var(--card-border); /* Added border */
+                box-shadow: 0 5px 25px rgba(0, 0, 0, 0.7);
+                max-width: 90%; /* Limit width for pill shape */
+                width: auto; /* Auto width for pill */
             }
             
             .tab-button {
-                margin-bottom: 5px;
-                padding: 16px 30px;
+                padding: 15px 25px;
+                font-size: 0.9rem;
+                border-radius: 25px; /* More rounded buttons */
+                margin: 0 5px;
+                font-weight: 600;
             }
 
             .modal-nav {
@@ -1170,6 +1248,27 @@
 
             .modal-next {
                 right: 10px;
+            }
+
+            /* Luxury Info Block Mobile Adjustments */
+            .luxury-info-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .info-item {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+            
+            .info-item i {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .luxury-info-block {
+                padding: 20px;
             }
         }
 
@@ -1202,95 +1301,21 @@
                 width: 35px;
                 height: 35px;
             }
+
+            /* Adjust pill nav for very small screens */
+            .tab-selector {
+                padding: 12px 15px;
+                top: 70px;
+                max-width: 95%; /* Slightly wider on small screens */
+                border-radius: 40px; /* Slightly less rounded on small screens */
+            }
+            
+            .tab-button {
+                padding: 12px 20px;
+                font-size: 0.85rem;
+                border-radius: 20px; /* Slightly less rounded buttons */
+            }
         }
-		
-		/* Luxury Info Block Styles */
-.luxury-info-block {
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(241, 196, 15, 0.05));
-    border: 1px solid var(--card-border);
-    border-radius: var(--radius-lg);
-    padding: 30px;
-    margin-bottom: 60px;
-    backdrop-filter: blur(10px);
-    box-shadow: var(--shadow);
-    position: relative;
-    overflow: hidden;
-}
-
-.luxury-info-block::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(to right, var(--gold), var(--gold-light));
-}
-
-.luxury-info-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
-
-.info-item {
-    display: flex;
-    align-items: center;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: var(--radius-md);
-    transition: var(--transition);
-    border: 1px solid rgba(212, 175, 55, 0.1);
-}
-
-.info-item:hover {
-    transform: translateY(-5px);
-    background: rgba(212, 175, 55, 0.1);
-    border-color: rgba(212, 175, 55, 0.3);
-}
-
-.info-item i {
-    font-size: 2.5rem;
-    color: var(--gold);
-    margin-right: 20px;
-    width: 60px;
-    text-align: center;
-}
-
-.info-text h4 {
-    font-size: 1.3rem;
-    margin-bottom: 8px;
-    color: var(--gold-light);
-}
-
-.info-text p {
-    color: var(--text-light);
-    font-size: 0.95rem;
-    margin: 0;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .luxury-info-content {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .info-item {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
-    }
-    
-    .info-item i {
-        margin-right: 0;
-        margin-bottom: 15px;
-    }
-    
-    .luxury-info-block {
-        padding: 20px;
-    }
-}
     </style>
 </head>
 <body>
@@ -1479,13 +1504,13 @@
 						<div class="image-gallery" data-gallery="m4">
 							<div class="gallery-container">
 								<div class="gallery-slide">
-									<img src="assets/Car Images/bmw_m4_front.png" alt="BMW M4 Front" class="gallery-image">
+									<img src="assets/Car Images/BMW1.jpg" alt="BMW M4 Front" class="gallery-image">
 								</div>
 								<div class="gallery-slide">
-									<img src="assets/Car Images/bmw_m4_interior.png" alt="BMW M4 Interior" class="gallery-image">
+									<img src="assets/Car Images/BMW1.jpg" alt="BMW M4 Interior" class="gallery-image">
 								</div>
 								<div class="gallery-slide">
-									<img src="assets/Car Images/bmw_m4_side.png" alt="BMW M4 Side" class="gallery-image">
+									<img src="assets/Car Images/BMW1.jpg" alt="BMW M4 Side" class="gallery-image">
 								</div>
 							</div>
 							<button class="gallery-nav gallery-prev">❮</button>
@@ -1506,13 +1531,13 @@
 						<div class="image-gallery" data-gallery="vclass">
 							<div class="gallery-container">
 								<div class="gallery-slide">
-									<img src="assets/Car Images/mercedes_vclass_front.png" alt="Mercedes V-Class Front" class="gallery-image">
+									<img src="assets/Car Images/VCLASS1.jpg" alt="Mercedes V-Class Front" class="gallery-image">
 								</div>
 								<div class="gallery-slide">
-									<img src="assets/Car Images/mercedes_vclass_interior.png" alt="Mercedes V-Class Interior" class="gallery-image">
+									<img src="assets/Car Images/VCLASS1.jpg" alt="Mercedes V-Class Interior" class="gallery-image">
 								</div>
 								<div class="gallery-slide">
-									<img src="assets/Car Images/mercedes_vclass_side.png" alt="Mercedes V-Class Side" class="gallery-image">
+									<img src="assets/Car Images/VCLASS1.jpg" alt="Mercedes V-Class Side" class="gallery-image">
 								</div>
 							</div>
 							<button class="gallery-nav gallery-prev">❮</button>
