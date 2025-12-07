@@ -919,7 +919,7 @@
             left: 0; 
             bottom: 0; 
             width: 40px; 
-            height: 3px; 
+            height = 3px; 
             background: var(--brand-purple); 
             transition: width 0.3s ease;
         }
@@ -1047,6 +1047,315 @@
             background-color: #1ebc57; 
             box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
             animation: none;
+        }
+
+        /* --- 13. Chatbot CSS --- */
+        .chatbot-wrapper {
+            position: fixed;
+            bottom: 30px;
+            left: 30px; /* Placed on left to avoid WhatsApp button on right */
+            z-index: 2500;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Trigger Button */
+        .chat-trigger {
+            width: 60px;
+            height: 60px;
+            background-color: var(--brand-purple);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(157, 69, 243, 0.4);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .chat-trigger:hover {
+            transform: scale(1.1);
+            background-color: #7b2cbf;
+        }
+
+        .chat-badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #ff4444;
+            color: white;
+            font-size: 12px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border: 2px solid white;
+        }
+
+        /* Chat Window */
+        .chat-window {
+            position: absolute;
+            bottom: 80px;
+            left: 0;
+            width: 350px;
+            height: 450px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transform: scale(0); /* Hidden by default */
+            transform-origin: bottom left;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .chat-window.active {
+            transform: scale(1);
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        /* Header */
+        .chat-header {
+            background: var(--brand-purple);
+            padding: 15px 20px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .header-info h4 {
+            margin: 0;
+            font-size: 1rem;
+            color: white;
+        }
+
+        .status-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #2ecc71;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .chat-close {
+            background: transparent;
+            border: none;
+            color: rgba(255,255,255,0.8);
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .chat-close:hover { color: white; }
+
+        /* Body */
+        .chat-body {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 12px 16px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            position: relative;
+            line-height: 1.4;
+        }
+
+        .message.bot {
+            background: white;
+            color: var(--text-dark);
+            border-bottom-left-radius: 2px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .message.user {
+            background: var(--brand-purple);
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 2px;
+            box-shadow: 0 5px 15px rgba(157, 69, 243, 0.2);
+        }
+
+        .time {
+            display: block;
+            font-size: 0.7rem;
+            margin-top: 5px;
+            opacity: 0.7;
+        }
+
+        /* FAQ Quick Buttons - Horizontal Scroll */
+        .chat-faq-container {
+            padding: 10px 15px;
+            background: white;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+            position: relative;
+        }
+
+        .chat-faq-scroll {
+            display: flex;
+            gap: 8px;
+            overflow-x: auto;
+            padding: 5px 0;
+            scrollbar-width: thin;
+            scrollbar-color: var(--brand-purple) #f0f0f0;
+        }
+
+        .chat-faq-scroll::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .chat-faq-scroll::-webkit-scrollbar-track {
+            background: #f0f0f0;
+            border-radius: 2px;
+        }
+
+        .chat-faq-scroll::-webkit-scrollbar-thumb {
+            background: var(--brand-purple);
+            border-radius: 2px;
+        }
+
+        .faq-btn {
+            background: rgba(157, 69, 243, 0.1);
+            border: 1px solid rgba(157, 69, 243, 0.2);
+            color: var(--brand-purple);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            flex-shrink: 0;
+            font-weight: 500;
+        }
+
+        .faq-btn:hover {
+            background: var(--brand-purple);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(157, 69, 243, 0.2);
+        }
+
+        /* Footer */
+        .chat-footer {
+            padding: 15px;
+            background: white;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .chat-footer input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid #eee;
+            border-radius: 25px;
+            outline: none;
+            transition: border-color 0.3s;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+        }
+
+        .chat-footer input:focus {
+            border-color: var(--brand-purple);
+            box-shadow: 0 0 0 2px rgba(157, 69, 243, 0.1);
+        }
+
+        .chat-footer button {
+            width: 40px;
+            height: 40px;
+            background: var(--brand-purple);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .chat-footer button:hover {
+            transform: scale(1.1);
+            background: #7b2cbf;
+        }
+
+        /* Chat links styling */
+        .chat-link {
+            color: var(--brand-purple);
+            text-decoration: underline;
+            cursor: pointer;
+            word-break: break-all;
+            font-weight: 500;
+        }
+
+        .chat-link:hover {
+            color: #7b2cbf;
+        }
+
+        /* Typing animation */
+        .typing-indicator {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            padding: 12px 16px;
+            background: white;
+            border-radius: 12px;
+            width: fit-content;
+            margin-bottom: 10px;
+        }
+
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--brand-purple);
+            border-radius: 50%;
+            animation: typingBounce 1.4s infinite ease-in-out;
+        }
+
+        .typing-dot:nth-child(1) {
+            animation-delay: -0.32s;
+        }
+
+        .typing-dot:nth-child(2) {
+            animation-delay: -0.16s;
+        }
+
+        @keyframes typingBounce {
+            0%, 80%, 100% {
+                transform: scale(0);
+                opacity: 0.5;
+            }
+            40% {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
 
         /* --- Animations --- */
@@ -1198,20 +1507,48 @@
                 min-width: 120px;
                 font-size: 0.85rem !important;
             }
-			
-			/* Center the first two buttons in hero section */
-				.hero .hero-text div {
-					justify-content: center;
-					width: 100%;
-				}
-				
-				/* Optional: Make buttons full width on mobile */
-				.hero .btn-primary,
-				.hero .btn-outline {
-					flex: 1;
-					min-width: 200px;
-					text-align: center;
-				}
+            
+            /* Center the first two buttons in hero section */
+            .hero .hero-text div {
+                justify-content: center;
+                width: 100%;
+            }
+            
+            /* Optional: Make buttons full width on mobile */
+            .hero .btn-primary,
+            .hero .btn-outline {
+                flex: 1;
+                min-width: 200px;
+                text-align: center;
+            }
+            
+            /* Chatbot adjustments for mobile */
+            .chat-window {
+                width: 300px;
+                bottom: 80px;
+                left: 0;
+            }
+            
+            /* Adjust positioning if needed */
+            .chatbot-wrapper {
+                left: 15px;
+                bottom: 15px;
+            }
+            
+            .whatsapp-float {
+                right: 15px;
+                bottom: 15px;
+            }
+            
+            /* FAQ buttons on mobile */
+            .faq-btn {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+            
+            .chat-faq-scroll {
+                gap: 6px;
+            }
         }
     </style>
 </head>
@@ -1389,6 +1726,45 @@
         </div>
     </section>
 
+<div class="chatbot-wrapper">
+    <button id="chatTrigger" class="chat-trigger">
+        <i class="fas fa-comments"></i>
+        <span class="chat-badge">1</span>
+    </button>
+
+    <div id="chatWindow" class="chat-window">
+        <div class="chat-header">
+            <div class="header-info">
+                <i class="fas fa-headset"></i>
+                <div>
+                    <h4>SLIPTECH Support</h4>
+                    <span class="status-dot"></span> Online
+                </div>
+            </div>
+            <button id="chatClose" class="chat-close"><i class="fas fa-times"></i></button>
+        </div>
+
+        <div class="chat-body" id="chatBody">
+            <div class="message bot">
+                <p>Hello! Welcome to SLIPTECH. 👋<br>How can we help you with your non-slip flooring needs today?</p>
+                <span class="time">Just now</span>
+            </div>
+        </div>
+
+        <!-- FAQ Quick Buttons Section -->
+        <div class="chat-faq-container" id="chatFaqContainer">
+            <div class="chat-faq-scroll" id="chatFaqScroll">
+                <!-- FAQ buttons will be inserted here by JavaScript -->
+            </div>
+        </div>
+
+        <div class="chat-footer">
+            <input type="text" id="chatInput" placeholder="Type your message...">
+            <button id="chatSend"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+</div>
+
     <footer>
         <div class="container">
             <div class="footer-grid">
@@ -1429,7 +1805,8 @@
         </div>
     </footer>
 
-    <script>
+
+   <script>
         // Enhanced Nav Toggle with animation
         const navToggle = document.getElementById('navToggle');
         const navMenu = document.getElementById('navMenu');
@@ -1593,6 +1970,342 @@
                 }, 600);
             });
         });
+
+        /* ---------------------------------------------------
+           SIMPLIFIED CHATBOT ENGINE - GENERAL INFO ONLY
+        ----------------------------------------------------- */
+        const chatTrigger = document.getElementById('chatTrigger');
+        const chatWindow = document.getElementById('chatWindow');
+        const chatClose = document.getElementById('chatClose');
+        const chatInput = document.getElementById('chatInput');
+        const chatSend = document.getElementById('chatSend');
+        const chatBody = document.getElementById('chatBody');
+        const chatFaqScroll = document.getElementById('chatFaqScroll');
+
+        // SIMPLE STATE - no more size/floor type questions
+        let state = {
+            isTyping: false
+        };
+
+        // ---- Toggle chat window ----
+        function toggleChat() {
+            chatWindow.classList.toggle('active');
+            const badge = chatTrigger.querySelector('.chat-badge');
+            if (badge) badge.style.display = 'none';
+            
+            // Load FAQ buttons when chat opens
+            if (chatWindow.classList.contains('active')) {
+                loadFaqButtons();
+            }
+        }
+
+        chatTrigger.addEventListener('click', toggleChat);
+        chatClose.addEventListener('click', toggleChat);
+
+        // ---- Helper: Simple match ----
+        function simpleMatch(input, keyword) {
+            const i = input.toLowerCase();
+            const k = keyword.toLowerCase();
+            return i.includes(k);
+        }
+
+        // ---- Check for "yes" responses ----
+        function isAffirmative(text) {
+            const affirmatives = ["yes", "yeah", "yep", "yup", "sure", "ok", "okay"];
+            const t = text.toLowerCase().trim();
+            
+            for (const word of affirmatives) {
+                if (t === word || t.includes(word)) {
+                    return true;
+                }
+            }
+            
+            return false;
+        }
+
+        /* -----------------------------
+              SIMPLIFIED INTENTS
+        ------------------------------ */
+        const intents = [
+            {
+                intent: "greeting",
+                keywords: ["hello", "hi", "hey", "good morning", "good afternoon", "good evening"],
+                reply: "Hello! Welcome to SLIPTECH. How can I help you with non-slip flooring today?"
+            },
+            {
+                intent: "pricing",
+                keywords: ["price", "cost", "quote", "estimate", "how much"],
+                reply: "For pricing and quotes, please fill out our Google Form for a free estimate. All details go directly there."
+            },
+            {
+                intent: "services",
+                keywords: ["service", "offer", "what do you do", "treatment", "anti slip", "non slip"],
+                reply: "We provide professional anti-slip treatments for tiles, marble, concrete, and all floor types in homes and businesses across Gauteng."
+            },
+            {
+                intent: "areas",
+                keywords: ["area", "location", "where", "operate", "gauteng", "pretoria", "johannesburg", "boksburg"],
+                reply: "We service all of Gauteng: Johannesburg, Pretoria, Centurion, Midrand, East & West Rand, and the Vaal area."
+            },
+            {
+                intent: "guarantee",
+                keywords: ["guarantee", "warranty", "how long", "last", "durable", "years"],
+                reply: "All our treatments come with a comprehensive 3-year guarantee for lasting protection against slips."
+            },
+            {
+                intent: "surfaces",
+                keywords: ["floor type", "tile", "marble", "porcelain", "granite", "cement", "surfaces", "what floors"],
+                reply: "We treat all surfaces: ceramic tiles, porcelain, marble, granite, terrazzo, concrete, and stone floors."
+            },
+            {
+                intent: "safety",
+                keywords: ["safety", "slip", "wet", "rain", "risk", "accident"],
+                reply: "Our treatment increases traction by up to 90%, especially when floors are wet, preventing slip accidents."
+            },
+            {
+                intent: "appearance",
+                keywords: ["appearance", "look", "colour", "color", "visible"],
+                reply: "The treatment is invisible and doesn't change your floor's appearance. It only adds traction."
+            },
+            {
+                intent: "maintenance",
+                keywords: ["clean", "maintenance", "care", "wash"],
+                reply: "Cleaning is normal - just avoid strong acids. Check traction annually. The 3-year guarantee covers durability."
+            },
+            {
+                intent: "booking",
+                keywords: ["booking", "inspection", "site visit", "meeting", "appointment", "book"],
+                reply: "To book an inspection or get a quote, please fill out our Google Form with your details."
+            },
+            {
+                intent: "form",
+                keywords: ["form", "google form", "link", "apply", "submit"],
+                reply: createClickableLink(`You can access our booking form here:
+
+👉 **Google Form:**  
+https://docs.google.com/forms/d/e/1FAIpQLSfLKUlpe-QaEXnruY1IVNEL3Hh8HVknBOcs2gqUizBzqGrqRQ/viewform?usp=header
+
+Click the link above to submit your request. We'll contact you within 24 hours.`)
+            }
+        ];
+
+        /* -----------------------------
+              INTENT DETECTION
+        ------------------------------ */
+        function detectIntent(text) {
+            const t = text.toLowerCase().trim();
+            
+            // Check for affirmative responses
+            if (isAffirmative(t)) {
+                return {
+                    intent: "affirmative",
+                    reply: "Great! Please fill out our Google Form for a free quote or inspection booking."
+                };
+            }
+            
+            // Special cases
+            if (t.includes("thank") || t.includes("thanks")) {
+                return {
+                    intent: "thanks",
+                    reply: "You're welcome! Let me know if you need anything else."
+                };
+            }
+            
+            if (t.includes("bye") || t.includes("goodbye")) {
+                return {
+                    intent: "goodbye",
+                    reply: "Goodbye! Stay safe and feel free to reach out anytime."
+                };
+            }
+            
+            // Check intents
+            for (const intent of intents) {
+                for (const kw of intent.keywords) {
+                    if (simpleMatch(t, kw)) {
+                        return intent;
+                    }
+                }
+            }
+            
+            return null;
+        }
+
+        /* -----------------------------
+              CREATE CLICKABLE LINK
+        ------------------------------ */
+        function createClickableLink(text) {
+            // Extract URLs from text
+            const urlRegex = /(https?:\/\/[^\s]+)/g;
+            
+            return text.replace(urlRegex, function(url) {
+                // Clean up the URL if it has formatting characters
+                const cleanUrl = url.replace(/[.,;!?]*$/, '');
+                return `<a href="${cleanUrl}" target="_blank" class="chat-link">${cleanUrl}</a>`;
+            });
+        }
+
+        /* -----------------------------
+              MAIN BOT MESSAGE HANDLER
+        ------------------------------ */
+        function handleUserMessage(text) {
+            const t = text.toLowerCase().trim();
+            
+            // Intent detection
+            const intent = detectIntent(t);
+            
+            if (intent) {
+                return intent.reply;
+            }
+
+            // Fallback - always provide Google Form link
+            return createClickableLink(`I can help with general info about our services. For specific quotes or bookings, please use our Google Form:
+
+👉 **Google Form:**  
+https://docs.google.com/forms/d/e/1FAIpQLSfLKUlpe-QaEXnruY1IVNEL3Hh8HVknBOcs2gqUizBzqGrqRQ/viewform?usp=header
+
+Key points:
+• 3-year guarantee on all treatments
+• Service all of Gauteng
+• All floor types treated
+• Invisible protection
+• Free quotes via form`);
+        }
+
+        /* -----------------------------
+                  SEND MESSAGE
+        ------------------------------ */
+        function sendMessage() {
+            const text = chatInput.value.trim();
+            if (text === "") return;
+
+            addMessage(text, "user");
+            chatInput.value = "";
+
+            // Show typing indicator
+            showTypingIndicator();
+            
+            setTimeout(() => {
+                const botResponse = handleUserMessage(text);
+                
+                // Remove typing indicator
+                removeTypingIndicator();
+                
+                // Add bot response with slight delay for typing effect
+                setTimeout(() => {
+                    addMessage(botResponse, "bot");
+                    
+                    // Show FAQ buttons after bot response
+                    loadFaqButtons();
+                }, 300);
+            }, 800); // Simulated thinking time
+        }
+
+        chatSend.addEventListener("click", sendMessage);
+        chatInput.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") sendMessage();
+        });
+
+        /* -----------------------------
+                FAQ BUTTONS HANDLER
+        ------------------------------ */
+        function loadFaqButtons() {
+            // Clear existing buttons
+            chatFaqScroll.innerHTML = '';
+            
+            const faqs = [
+                { text: "How much does it cost?", question: "How much does it cost?" },
+                { text: "3-year guarantee", question: "What is the guarantee?" },
+                { text: "Service areas", question: "What areas do you service?" },
+                { text: "Floor types", question: "What surfaces can you treat?" },
+                { text: "Booking form", question: "Google form link" },
+                { text: "How it works", question: "How does the treatment work?" },
+                { text: "Safety benefits", question: "Is it safe for wet floors?" },
+                { text: "Appearance", question: "Does it change floor look?" }
+            ];
+            
+            faqs.forEach(faq => {
+                const button = document.createElement('button');
+                button.className = 'faq-btn';
+                button.textContent = faq.text;
+                button.dataset.question = faq.question;
+                
+                button.addEventListener('click', () => {
+                    // Hide FAQ buttons when one is clicked
+                    chatFaqScroll.innerHTML = '';
+                    
+                    chatInput.value = faq.question;
+                    sendMessage();
+                });
+                
+                chatFaqScroll.appendChild(button);
+            });
+        }
+
+        /* -----------------------------
+                TYPING INDICATOR
+        ------------------------------ */
+        function showTypingIndicator() {
+            if (state.isTyping) return;
+            
+            state.isTyping = true;
+            
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'typing-indicator';
+            typingDiv.id = 'typingIndicator';
+            
+            for (let i = 0; i < 3; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'typing-dot';
+                typingDiv.appendChild(dot);
+            }
+            
+            chatBody.appendChild(typingDiv);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function removeTypingIndicator() {
+            state.isTyping = false;
+            const typingIndicator = document.getElementById('typingIndicator');
+            if (typingIndicator) {
+                typingIndicator.remove();
+            }
+        }
+
+        /* -----------------------------
+                DISPLAY MESSAGE UI
+        ------------------------------ */
+        function addMessage(text, sender) {
+            const div = document.createElement("div");
+            div.classList.add("message", sender);
+
+            const p = document.createElement("p");
+            
+            // Check if text contains HTML (links)
+            if (text.includes('<a href')) {
+                p.innerHTML = text; // Use innerHTML for links
+            } else {
+                p.textContent = text;
+            }
+
+            const time = document.createElement("span");
+            time.classList.add("time");
+
+            const now = new Date();
+            time.textContent = now.getHours() + ":" + String(now.getMinutes()).padStart(2, "0");
+
+            div.appendChild(p);
+            div.appendChild(time);
+
+            chatBody.appendChild(div);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        // Initialize FAQ buttons on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load FAQ buttons initially
+            loadFaqButtons();
+        });
+
     </script>
 </body>
 </html>
